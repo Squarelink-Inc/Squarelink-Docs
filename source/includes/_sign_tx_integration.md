@@ -173,6 +173,80 @@ Based on the Confirmation Policy you've set, we'll send a POST request to the sp
 
 We will make 5 attempted callbacks, each 10 seconds apart, before we discard a callback request.
 
-<aside class="warning">Note: We do not support any loopback URLs such as `localhost`, `127.0.0.1`, etc.</aside>
+<aside class="warning">Note: We do not allow any loopback URLs such as `localhost`, `127.0.0.1`, etc.</aside>
 
-## Examples
+## Live Examples
+
+<aside class="notice">All examples are implemented using Squarelink's internally Registered App and Tokens</aside>
+
+> HTML for Ethereum example
+
+```html
+<a href="https://app.squarelink.com/tx?
+	token_id=t00d1c3d094e5bf0eba6ca7846ab88c2a
+	&amount=10000000000000000
+	&to=0xed19abdc33e91c809376b742d48ed1d935d4faef
+	&description=You're about to donate 0.01 Ethereum to Squarelink">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a>
+```
+### Send 0.01 ETH to Squarelink
+
+<a href="https://app.squarelink.com/tx?token_id=t00d1c3d094e5bf0eba6ca7846ab88c2a&amount=10000000000000000&to=0xed19abdc33e91c809376b742d48ed1d935d4faef&description=You're about to donate 0.01 Ethereum to Squarelink">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a>
+
+> HTML for OmiseGo example (using method & parameters)
+
+```html
+<a href="https://app.squarelink.com/tx?
+	token_id=t909cb74a5546fc7961627554ca355b7b
+	&method=transfer
+	&params=[0xed19abdc33e91c809376b742d48ed1d935d4faef,10000000000000000000]
+	&description=You're about to donate 10 OMG to Squarelink.">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a>
+```
+<br><br><br><br>
+
+### Send 10 OmiseGo to Squarelink (using method & parameters)
+
+<a href="https://app.squarelink.com/tx?token_id=t909cb74a5546fc7961627554ca355b7b&method=transfer&params=[0xed19abdc33e91c809376b742d48ed1d935d4faef,10000000000000000000]&description=You're about to donate 10 OMG to Squarelink">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a>
+
+> HTML for OmiseGo example (using contract data)
+
+```html
+<a href="https://app.squarelink.com/tx?
+	token_id=t909cb74a5546fc7961627554ca355b7b
+	&data=0xa9059cbb000000000000000000000000ed19abdc33e91c809376b742d48ed1d935d4faef0000000000000000000000000000000000000000000000008ac7230489e80000
+	&description=You're about to donate 10 OMG to Squarelink.">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a>
+```
+<br><br><br><br>
+
+### Send 10 OmiseGo to Squarelink (using contract data)
+
+<a href="https://app.squarelink.com/tx?token_id=t909cb74a5546fc7961627554ca355b7b&data=0xa9059cbb000000000000000000000000ed19abdc33e91c809376b742d48ed1d935d4faef0000000000000000000000000000000000000000000000008ac7230489e80000&description=You're about to donate 10 OMG to Squarelink.">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a>
+
+> HTML for BTC example
+
+```html
+<a href="https://app.squarelink.com/tx?
+	token_id=t26e6e45d7912d26f46ae9258939e1070
+	&amount=1000000
+	&to=1dice8EMZmqKvrGE4Qc9bUFf9PX3xaYDp
+	&description=You're about to donate 0.01 BTC to Squarelink">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a>
+```
+<br><br><br>
+
+### Send 0.1 BTC to Squarelink
+<a href="https://app.squarelink.com/tx?token_id=t26e6e45d7912d26f46ae9258939e1070&amount=1000000&to=1dice8EMZmqKvrGE4Qc9bUFf9PX3xaYDp&description=You're about to donate 0.01 BTC to Squarelink">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a>

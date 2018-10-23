@@ -3,7 +3,7 @@
 
 With the Squarelink Sign In button, you can authenticate your users and access info about their Squarelink accounts in minutes.
 
-If you have not done so already, please [register your app or DApp](#registering-your-app) in the [Squarelink Developer Console](https://dev.squarelink.com)
+If you have not done so already, please [register your app or DApp](#getting-started) in the [Squarelink Developer Console](https://dev.squarelink.com)
 
 ## Set Up Your App
 
@@ -79,11 +79,11 @@ GET https://oauth.squarelink.com/token?
 
 ```shell
 {
-  success: true,
-  token_type: 'Bearer',
-  expires: 24802104,
-  access_token: "xxx.xxxxxx.xxx",
-  refresh_token: "xxxx"
+  "success": true,
+  "token_type": 'Bearer',
+  "expires": 24802104,
+  "access_token": "xxx.xxxxxx.xxx",
+  "refresh_token": "xxxx"
 }
 ```
 
@@ -140,11 +140,11 @@ GET https://oauth.squarelink.com/token?
 
 ```shell
 {
-  success: true,
-  token_type: 'Bearer',
-  expires: 24802104,
-  access_token: "xxx.xxxxxx.xxx",
-  refresh_token: "xxxx"
+  "success": true,
+  "token_type": 'Bearer',
+  "expires": 24802104,
+  "access_token": "xxx.xxxxxx.xxx",
+  "refresh_token": "xxxx"
 }
 ```
 
