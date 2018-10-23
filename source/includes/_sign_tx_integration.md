@@ -165,7 +165,7 @@ POST https://your-site.com/callback-url -d
 }
 ```
 
-Callbacks allow us to send you updates about your users' transactions. This requires that you've set the Webhooks Callback URL in your registered token's settings on the Developer Console.
+Callbacks allow us to send you updates about your users' transactions. This requires that you've set the Webhooks Callback URL in your registered token's settings in the Developer Console.
 
 The data returned in the callback complies with our [**Transaction Model**](#transactions) as defined in the [API Reference](#api-reference)
 
