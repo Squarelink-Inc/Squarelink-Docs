@@ -141,7 +141,7 @@ POST https://your-site.com/callback-url -d
   "id": "0x61474003e56d67aba6bf148c5ec361e3a3c1ceea37fe3ace7d87759b399292f9"
   "sub": "u12345abcdef",
   "currency": "ETH",
-  "status": "success",
+  "status": "confirmed",
   "from": "0x0a956129b6240784aac01b92a924c14f2e7cf932",
   "to": "0xed19abdc33e91c809376b742d48ed1d935d4faee",
   "value": 0,
@@ -167,7 +167,7 @@ POST https://your-site.com/callback-url -d
 
 Callbacks allow us to send you updates about your users' transactions. This requires that you've set the Webhooks Callback URL in your registered token's settings in the Developer Console.
 
-The data returned in the callback complies with our [**Transaction Model**](#transactions) as defined in the [API Reference](#api-reference)
+The data returned in the callback complies with our [**Transaction Model**](#transaction-object) as defined in the [API Reference](#api-reference)
 
 Based on the Confirmation Policy you've set, we'll send a POST request to the specified Callback URL with information about a transaction once it's confirmed.
 
