@@ -31,14 +31,14 @@ GET https://api.squarelink.com/user?access_token=xxx.xxxxx.xxx
 }
 ```
 
-<aside class="notice">You must be authorized for the `user` scope to access this route</aside>
+<aside class="notice">You must be authorized for the <i>user</i> scope to access this route</aside>
 
 Read a user's Squarelink Account info such as their email, family name, and given name with this route
 
 ### Request Parameters
-Parameter | Required | Description
+Parameter | Type | Description
 --------- | ----------- | -----------
-**`access_token`** | **true** | The access token you received for a Squarelink user
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user
 
 ### Response Body
 Parameter | Type | Description
@@ -118,6 +118,47 @@ GET https://api.squarelink.com/wallets?
 
 <aside class="notice">All balances are passed in the smallest non-divisible value the respective currency supports</aside>
 
+### GET /wallets
+<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRNECY></i> scope</aside>
 
+Get a list of a Squarelink user's wallets and public information about those wallets. Optionally, if you're authorized with the `wallets:read` or `wallets:read:eth` scopes, you can request a list of active ERC-20 balances for the user as well.  
+
+### Request Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user
+**`currencies`** | **String** | *(Required)* A semi-colon-separated list of currencies for the wallets you'd like to request. Valid currencies are `ETH`, `BTC`, and `LTC`.
+**`erc20`** | **Boolean** | Indicate whether you'd like us to return all valid ERC-20 balances. Only available if you're authorized for the `wallets:read` or `wallets:read:eth` scopes.
+
+### Response Body
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`success`** | **Boolean** | Indicates if the request was successful
+**`wallets`** | **Array** | A list of [Wallet Objects](#wallet-object)
+**`erc20`** | **Array** | A list of [ERC-20 Objects](#erc-20-object) (if you specified `erc20 = true`)
+
+### Wallet Object
+
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`owner`** | **String** | The ID of the Squarelink user owning the wallet
+**`currency`** | **String** | The currency of the wallet
+**`balance`** | **Float** | Whole number balance of the wallet, measured in the lowest non-divisible amount of its currency
+**`decimals`** | **Integer** | Number of decimal places the currency uses (i.e. 18 for ETH) for its lowest non-divisible amounts
+**`name`** | **String** | The name of the currency (i.e. "Bitcoin")
+**`address`** | **String** | The public address of the wallet
+**`testnet`** | **String** | The testnet address of the wallet (if BTC or LTC)
+**`created_on`** | **Integer** | Date created on Squarelink (number of seconds since the Epoch)
+
+### ERC-20 Object
+
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`balance`** | **Float** | Whole number amount of ERC-20 tokens held by the user's account (lowest non-divisible amount)
+**`decimals`** | **Integer** | Number of decimal places specified in the currency's contract
+**`contract_address`** | **String** | The contract address of the ERC-20 token
+**`symbol`** | **String** | The token symbol for the ERC-20 token (i.e. POWR for PowerLedger)
+**`name`** | **String** | The ERC-20's name (i.e. PowerLedger)
+**`address`** | **String** | The Squarelink user's Ethereum address holding these tokens
 
 ## Transactions
