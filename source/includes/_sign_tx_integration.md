@@ -20,7 +20,7 @@ We require the following info about the token you'll be using:
 
 - **Whitelisted Deposit Addresses (Optional):** Valid recipient addresses. _**Leave blank for any**_. For ERC-20 tokens, the deposit address is similarly the recipient of the token, not the contract address.
 
-- **Contract Address**: _**This must currently be an Etherscan-verified smart contract**_. Use it to specify an ERC-20 contract address or a general purpose smart contract on the Ethereum blockchain.
+- **Contract Address**: _**This must currently be an Etherscan-verified smart contract**_. Use it to specify an ERC-20 contract address or a general purpose smart contract on the Ethereum blockchain. ([*Verify your contract on Etherscan*](https://etherscan.io/verifyContract2))
 
 After you've created the token, you can navigate to the token settings in the Developer Console and use the following optional settings:
 
@@ -127,7 +127,7 @@ Parameter | Required | Description
 *Where EXAMPLE tokens have 18 decimal places*
 
 
-For the protection of Squarelink users, we require that your contract is verified on Etherscan so we can access the ABI directly. We plan to build support for contract source uploads in the Developer Console so you can verify it directly with Squarelink.
+For the protection of Squarelink users, we require that your contract is verified on Etherscan so we can access the ABI directly, but it's a simple process - [*verify your contract here*](https://etherscan.io/verifyContract2). We plan to build support for contract source uploads in the Developer Console so you can verify it directly with Squarelink.
 
 
 
