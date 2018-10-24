@@ -46,7 +46,7 @@ Once a user has authorized your app or DApp, we'll redirect the user to the redi
 Parameter | Description
 --------- | -----------
 `state` | Returned if you passed it in the request
-`token` | An access token *if you specified the `token` response_type*
+`access_token` | An access token *if you specified the `token` response_type*
 `code` | An authorization code to be used in the second step of the Authorization Code Grant *if you specified the `code` response_type*
 
 A successfully authorized request will redirect back to your redirect URI such as `http://localhost:8080/your-redirect-uri?code=xxxxx&state=xxxxx`
@@ -89,7 +89,7 @@ GET https://oauth.squarelink.com/token?
 
 If you are building a [Single-Page Application](https://en.wikipedia.org/wiki/Single-page_application) or another frontend-only application, you should use `response_type=token` in your authorization request. This is to ensure your application's `client_secret` is never exposed to the public.
 
-In this instance, we will return an access token as a URL parameter called `token` in the redirect back to your application. Now you're set to start using the [Squarelink API](#api-reference).
+In this instance, we will return an access token as a URL parameter called `access_token` in the redirect back to your application. Now you're set to start using the [Squarelink API](#api-reference).
 
 If you've built a standard web application or have a backend that can secure your `client_secret`, you should use `response_type=code` in your authorization request.
 

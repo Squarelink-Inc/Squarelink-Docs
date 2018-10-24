@@ -404,7 +404,7 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 <td>Returned if you passed it in the request</td>
 </tr>
 <tr>
-<td><code>token</code></td>
+<td><code>access_token</code></td>
 <td>An access token <em>if you specified the <code>token</code> response_type</em></td>
 </tr>
 <tr>
@@ -468,7 +468,7 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 </code></pre>
 <p>If you are building a <a href="https://en.wikipedia.org/wiki/Single-page_application">Single-Page Application</a> or another frontend-only application, you should use <code>response_type=token</code> in your authorization request. This is to ensure your application&#39;s <code>client_secret</code> is never exposed to the public.</p>
 
-<p>In this instance, we will return an access token as a URL parameter called <code>token</code> in the redirect back to your application. Now you&#39;re set to start using the <a href="#api-reference">Squarelink API</a>.</p>
+<p>In this instance, we will return an access token as a URL parameter called <code>access_token</code> in the redirect back to your application. Now you&#39;re set to start using the <a href="#api-reference">Squarelink API</a>.</p>
 
 <p>If you&#39;ve built a standard web application or have a backend that can secure your <code>client_secret</code>, you should use <code>response_type=code</code> in your authorization request.</p>
 
