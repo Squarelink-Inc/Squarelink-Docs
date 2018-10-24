@@ -11,6 +11,10 @@ We offer standard OAuth 2.0 "Sign In" integrations along with a REST API for int
 
 Squarelink and the Squarelink API are currently in beta. We will periodically add features, but we don't anticipate any breaking changes to our API. In the event breaking changes are introduced, Squarelink Developers will be notified via email in advance of the change.
 
+Squarelink is a community tool currently offered for free, without warranty.
+
+If you'd like to request features or contribute to the community, please see [Community](#community) 
+
 For any API-related issues or custom needs, please email [support@squarelink.com](mailto:support@squarelink.com)
 
 ## Getting Started

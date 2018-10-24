@@ -1,0 +1,1560 @@
+
+<!doctype html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127902628-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127902628-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Squarelink Docs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#2d4beb">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-dev.svg" class="logo" alt="Logo dev" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-started" class="toc-h2 toc-link" data-title="Getting Started">Getting Started</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sign-in-integration" class="toc-h1 toc-link" data-title="Sign In Integration">Sign In Integration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#set-up-your-app" class="toc-h2 toc-link" data-title="Set Up Your App">Set Up Your App</a>
+                  </li>
+                  <li>
+                    <a href="#sign-in-button" class="toc-h2 toc-link" data-title="Sign In Button">Sign In Button</a>
+                  </li>
+                  <li>
+                    <a href="#obtain-an-access-token" class="toc-h2 toc-link" data-title="Obtain an Access Token">Obtain an Access Token</a>
+                  </li>
+                  <li>
+                    <a href="#refreshing-an-access-token" class="toc-h2 toc-link" data-title="Refreshing an Access Token">Refreshing an Access Token</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sign-tx-integration" class="toc-h1 toc-link" data-title="Sign Tx Integration">Sign Tx Integration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#registering-tokens" class="toc-h2 toc-link" data-title="Registering Tokens">Registering Tokens</a>
+                  </li>
+                  <li>
+                    <a href="#sign-tx-button" class="toc-h2 toc-link" data-title="Sign Tx Button">Sign Tx Button</a>
+                  </li>
+                  <li>
+                    <a href="#using-callbacks" class="toc-h2 toc-link" data-title="Using Callbacks">Using Callbacks</a>
+                  </li>
+                  <li>
+                    <a href="#live-examples" class="toc-h2 toc-link" data-title="Live Examples">Live Examples</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-reference" class="toc-h1 toc-link" data-title="API Reference">API Reference</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#user-info" class="toc-h2 toc-link" data-title="User Info">User Info</a>
+                  </li>
+                  <li>
+                    <a href="#wallets" class="toc-h2 toc-link" data-title="Wallets">Wallets</a>
+                  </li>
+                  <li>
+                    <a href="#transactions" class="toc-h2 toc-link" data-title="Transactions">Transactions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#community" class="toc-h1 toc-link" data-title="Community">Community</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://dev.squarelink.com'>Sign Up for Squarelink Developer</a></li>
+            <li><a href='mailto://support@squarelink.com'>support@squarelink.com</a></li>
+            <li><a href='https://github.com/Squarelink-Inc'>Squarelink Github</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p><strong>Welcome, Squarelink Developer!</strong></p>
+
+<p>Squarelink is the first access tool for blockchain apps and services that enables users to securely recover lost private keys.
+We&#39;ll walk you through integrating Squarelink into your app or DApp so your users can seamlessly interact with the blockchain.</p>
+
+<p>We offer standard OAuth 2.0 &quot;Sign In&quot; integrations along with a REST API for interacting with Squarelink user accounts as well as &quot;Sign Tx&quot; integrations to easily request transactions from a user.</p>
+
+<aside class="warning">BETA DISCLAIMER</aside>
+
+<p>Squarelink and the Squarelink API are currently in beta. We will periodically add features, but we don&#39;t anticipate any breaking changes to our API. In the event breaking changes are introduced, Squarelink Developers will be notified via email in advance of the change.</p>
+
+<p>Squarelink is a community tool currently offered for free, without warranty.</p>
+
+<p>If you&#39;d like to request features or contribute to the community, please see <a href="#community">Community</a> </p>
+
+<p>For any API-related issues or custom needs, please email <a href="mailto:support@squarelink.com">support@squarelink.com</a></p>
+<h2 id='getting-started'>Getting Started</h2>
+<p>Before integrating either Sign In or Sign Tx, you must first create an account in the <a href="https://dev.squarelink.com">Squarelink Developer Console</a> and register your application.</p>
+
+<p>Once you register your first application, you&#39;ll receive a <code>client_id</code> and <code>client_secret</code>. Your <code>client_id</code> is a public value used to identify your application, but remember to keep your <code>client_secret</code> hidden - never insert it into a public application.</p>
+<h1 id='sign-in-integration'>Sign In Integration</h1>
+<p>With the Squarelink Sign In button, you can authenticate your users and access info about their Squarelink accounts in minutes.</p>
+
+<p>If you have not done so already, please <a href="#getting-started">register your app or DApp</a> in the <a href="https://dev.squarelink.com">Squarelink Developer Console</a></p>
+<h2 id='set-up-your-app'>Set Up Your App</h2>
+<p>Once you&#39;ve registered your application, you can head to your application&#39;s home page in the <a href="https://dev.squarelink.com">Developer Console</a> and click on &quot;Sign In&quot;. We&#39;ll prompt you to add some application-specific information as follows:</p>
+
+<ul>
+<li><strong>App Type:</strong> what kind of application are you building?</li>
+<li><strong>Redirect URI Whitelist:</strong> a list of URLs that we are allowed to redirect back to after a user authorizes your app. <strong>Leave blank to use any URL</strong></li>
+<li><strong>Website:</strong> your applications website</li>
+</ul>
+
+<p>After you&#39;ve set up your app or DApp for OAuth, you can simply copy and paste the auto-generated button code.</p>
+<h2 id='sign-in-button'>Sign In Button</h2>
+<blockquote>
+<p>Your button code should look something like this:</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://app.squarelink.com/authorize?
+    client_id={{Your app's client_id}}
+    &amp;scope=[{{Comma-separated desired scopes}}]
+    &amp;redirect_uri={{One of your whitelisted redirect URIs}}
+    &amp;state={{An optional csrf token}}
+    &amp;response_type={{'code' or 'token'}}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://squarelink.com/img/sign-in.svg"</span> <span class="na">width=</span><span class="s">"220"</span><span class="nt">&gt;&lt;/img&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+<p>Once you&#39;ve set up your app or DApp for OAuth in the Developer Console, you can integrate the Sign In button in a cinch.</p>
+
+<p>The Sign In button should redirect the user to Squarelink&#39;s Authorization Page with the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><strong>true</strong></td>
+<td>This is the <code>client_id</code> found on your App&#39;s home page in the Developer Console</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><strong>true</strong></td>
+<td>This is a comma-separated list of permissions you&#39;d like to request from a user. (See available scopes below)</td>
+</tr>
+<tr>
+<td><code>redirect_uri</code></td>
+<td><strong>true</strong></td>
+<td>This is the url you&#39;d like us to send the user back to after the user has authorized your app. <strong>Make sure it is whitelisted in your app&#39;s Sign In settings</strong></td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><em>false</em></td>
+<td>This can be any valid CSRF token (randomly generated). We&#39;ll return it to you as a URL parameter in the redirect to your application.</td>
+</tr>
+<tr>
+<td>response_type</td>
+<td><strong>true</strong></td>
+<td>Specifies the OAuth 2.0 grant type. Set to &quot;<strong>code</strong>&quot; to use the <strong><a href="https://oauth.net/2/grant-types/authorization-code/">Authorization Code Grant</a></strong>. Set to &quot;<strong>token</strong>&quot; to use the <strong><a href="https://oauth.net/2/grant-types/implicit/">Implicit Grant</a></strong>. Read <a href="#obtain-an-access-token">Obtain an Access Token</a> for more info.</td>
+</tr>
+</tbody></table>
+
+<p>Once a user has authorized your app or DApp, we&#39;ll redirect the user to the redirect URI specified (if whitelisted) with the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>state</code></td>
+<td>Returned if you passed it in the request</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td>An access token <em>if you specified the <code>token</code> response_type</em></td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td>An authorization code to be used in the second step of the Authorization Code Grant <em>if you specified the <code>code</code> response_type</em></td>
+</tr>
+</tbody></table>
+
+<p>A successfully authorized request will redirect back to your redirect URI such as <code>http://localhost:8080/your-redirect-uri?code=xxxxx&amp;state=xxxxx</code></p>
+
+<p>If there is an issue with your request, we&#39;ll redirect back to your application with the <code>error</code> parameter. For instance, <code>http://localhost:8080/your-redirect-uri?error=description%20of%20the%20problem</code></p>
+<h3 id='available-scopes'>Available Scopes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>user</code></strong></td>
+<td>This allows you to view user info such as email, given_name, and family_name</td>
+</tr>
+<tr>
+<td><strong><code>wallets:read</code></strong></td>
+<td>This allows you to read info such as transactions and addresses for all of a user&#39;s blockchain accounts.</td>
+</tr>
+<tr>
+<td><strong><code>wallets:read:eth</code></strong></td>
+<td>A reduced-scope version of <code>wallets:read</code> limited to Ethereum accounts</td>
+</tr>
+<tr>
+<td><strong><code>wallets:read:btc</code></strong></td>
+<td>A reduced-scope version of <code>wallets:read</code> limited to Bitcoin accounts</td>
+</tr>
+<tr>
+<td><strong><code>wallets:read:ltc</code></strong></td>
+<td>A reduced-scope version of <code>wallets:read</code> limited to Litecoin accounts</td>
+</tr>
+</tbody></table>
+<h2 id='obtain-an-access-token'>Obtain an Access Token</h2>
+<blockquote>
+<p>Authorization Code Grant Request Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>GET https://oauth.squarelink.com/token?
+  <span class="nv">grant_type</span><span class="o">=</span>authorization_code
+  &amp;client_id<span class="o">=</span>xxxxx
+  &amp;client_secret<span class="o">=</span>xxxxx
+  &amp;code<span class="o">=</span>xxxxx
+  &amp;state<span class="o">=</span>xxxxx
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>: <span class="nb">true</span>,
+  <span class="s2">"token_type"</span>: <span class="s1">'Bearer'</span>,
+  <span class="s2">"expires"</span>: 24802104,
+  <span class="s2">"access_token"</span>: <span class="s2">"xxx.xxxxxx.xxx"</span>,
+  <span class="s2">"refresh_token"</span>: <span class="s2">"xxxx"</span>
+<span class="o">}</span>
+</code></pre>
+<p>If you are building a <a href="https://en.wikipedia.org/wiki/Single-page_application">Single-Page Application</a> or another frontend-only application, you should use <code>response_type=token</code> in your authorization request. This is to ensure your application&#39;s <code>client_secret</code> is never exposed to the public.</p>
+
+<p>In this instance, we will return an access token as a URL parameter called <code>token</code> in the redirect back to your application. Now you&#39;re set to start using the <a href="#api-reference">Squarelink API</a>.</p>
+
+<p>If you&#39;ve built a standard web application or have a backend that can secure your <code>client_secret</code>, you should use <code>response_type=code</code> in your authorization request.</p>
+
+<p>We will redirect to your application with a URL parameter called <code>code</code> as well as <code>state</code> if you provided it in the response.</p>
+
+<p>You can now exchange <code>code</code> (and <code>state</code> if used) for an access token using Squarelink&#39;s OAuth API.</p>
+
+<aside class="success">Now your ready to use the Squarelink API]. Use the resulting access token in all requests</aside>
+<h3 id='request-endpoint-https-oauth-squarelink-com-token'><em><strong>Request Endpoint:</strong></em> <em><a href="#">https://oauth.squarelink.com/token</a></em></h3><h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>grant_type</code></strong></td>
+<td><strong>true</strong></td>
+<td>Should be set to <code>authorization_code</code></td>
+</tr>
+<tr>
+<td><strong><code>client_id</code></strong></td>
+<td><strong>true</strong></td>
+<td>Your application&#39;s <code>client_id</code> found in the Developer Console</td>
+</tr>
+<tr>
+<td><strong><code>client_secret</code></strong></td>
+<td><strong>true</strong></td>
+<td>Your application&#39;s <code>client_secret</code> found in the Developer Console</td>
+</tr>
+<tr>
+<td><strong><code>code</code></strong></td>
+<td><strong>true</strong></td>
+<td>The authorization code returned to your application in the redirect</td>
+</tr>
+<tr>
+<td><strong><code>state</code></strong></td>
+<td><em>If provided in authorization request</em></td>
+<td>A reduced-scope version of <code>wallets:read</code> limited to Litecoin accounts</td>
+</tr>
+</tbody></table>
+<h3 id='response-body'>Response Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>success</code></strong></td>
+<td><strong>Boolean</strong></td>
+<td>Indicates if your request was successful</td>
+</tr>
+<tr>
+<td><strong><code>token_type</code></strong></td>
+<td><strong>String</strong></td>
+<td>&quot;Bearer&quot;</td>
+</tr>
+<tr>
+<td><strong><code>expires</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Time from the epoch in seconds, indicates expiry time for access token</td>
+</tr>
+<tr>
+<td><strong><code>access_token</code></strong></td>
+<td><strong>String</strong></td>
+<td>A JSON Web Token you can use to access Squarelink&#39;s API</td>
+</tr>
+<tr>
+<td><strong><code>refresh_token</code></strong></td>
+<td><strong>String</strong></td>
+<td>A token you can use to refresh your access token after expiration <a href="#refreshing-an-access-token">(See Below)</a></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">Make sure you replace "client_id" and "client_secret" with the values found on the home page of your
+app in the Developer Console</aside>
+<h2 id='refreshing-an-access-token'>Refreshing an Access Token</h2>
+<blockquote>
+<p>Refresh Grant Request Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>GET https://oauth.squarelink.com/token?
+  <span class="nv">grant_type</span><span class="o">=</span>refresh
+  &amp;client_id<span class="o">=</span>xxxxx
+  &amp;client_secret<span class="o">=</span>xxxxx
+  &amp;refresh_token<span class="o">=</span>xxxxx
+  &amp;scope<span class="o">=[</span>wallets:read:eth,user]
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>: <span class="nb">true</span>,
+  <span class="s2">"token_type"</span>: <span class="s1">'Bearer'</span>,
+  <span class="s2">"expires"</span>: 24802104,
+  <span class="s2">"access_token"</span>: <span class="s2">"xxx.xxxxxx.xxx"</span>,
+  <span class="s2">"refresh_token"</span>: <span class="s2">"xxxx"</span>
+<span class="o">}</span>
+</code></pre>
+<p>If you used the Authorization Code Grant method to get authorization from a user, you can refresh the resulting access token to prevent expiry. To do so, you must store the <code>refresh_token</code> received in the original response.</p>
+
+<p>You may specify a new reduced scope as well. This new scope must be limited to scopes authorized in the initial authorization. For instance, if you were initially authorized for only <code>wallets:read:eth</code>, you cannot request <code>wallets:read</code>.</p>
+<h3 id='request-endpoint-https-oauth-squarelink-com-token-2'><em><strong>Request Endpoint:</strong></em> <em><a href="#">https://oauth.squarelink.com/token</a></em></h3><h3 id='request-parameters-2'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>grant_type</code></strong></td>
+<td><strong>true</strong></td>
+<td>Should be set to <code>refresh</code></td>
+</tr>
+<tr>
+<td><strong><code>client_id</code></strong></td>
+<td><strong>true</strong></td>
+<td>Your application&#39;s <code>client_id</code> found in the Developer Console</td>
+</tr>
+<tr>
+<td><strong><code>client_secret</code></strong></td>
+<td><strong>true</strong></td>
+<td>Your application&#39;s <code>client_secret</code> found in the Developer Console</td>
+</tr>
+<tr>
+<td><strong><code>refresh_token</code></strong></td>
+<td><strong>true</strong></td>
+<td>The <code>refresh_token</code> you received when first obtaining an access token</td>
+</tr>
+<tr>
+<td><strong><code>scope</code></strong></td>
+<td><em>(Optional)</em></td>
+<td>A new comma-separated list of scopes (must be previously authorized for each)</td>
+</tr>
+</tbody></table>
+<h3 id='response-body-2'>Response Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>success</code></strong></td>
+<td><strong>Boolean</strong></td>
+<td>Indicates if your request was successful</td>
+</tr>
+<tr>
+<td><strong><code>token_type</code></strong></td>
+<td><strong>String</strong></td>
+<td>&quot;Bearer&quot;</td>
+</tr>
+<tr>
+<td><strong><code>expires</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Time from the epoch in seconds, indicates expiry time for access token</td>
+</tr>
+<tr>
+<td><strong><code>access_token</code></strong></td>
+<td><strong>String</strong></td>
+<td>A JSON Web Token you can use to access Squarelink&#39;s API</td>
+</tr>
+<tr>
+<td><strong><code>refresh_token</code></strong></td>
+<td><strong>String</strong></td>
+<td>A token you can use to refresh your access token after expiration</td>
+</tr>
+</tbody></table>
+<h1 id='sign-tx-integration'>Sign Tx Integration</h1>
+<aside class="notice">Squarelink measures tokens in their smallest non-divisible amounts. I.e. 10^-8 for Bitcoin and Litecoin and 10^-18 for Ethereum.</aside>
+
+<p>Rather than building your own custodial wallet or requiring your customers use their own wallet to interact with your DApp, you can simply add Squarelink&#39;s &quot;Sign Tx&quot; button directly into your DApp.</p>
+
+<p>Squarelink&#39;s &quot;Sign Tx&quot; button allows DApps to request Ethereum, Bitcoin, Litecoin, or other Ethereum-based tokens (i.e. ERC-20s) from Squarelink users.</p>
+
+<p>To get started, you&#39;ll need to register one of these tokens or smart contracts with your DApp in the <a href="https://dev.squarelink.com">Developer Console</a></p>
+<h2 id='registering-tokens'>Registering Tokens</h2>
+<aside class="warning">Please register your DApp in the Developer Console if you haven't done so already</aside>
+
+<p>To register a token, simply navigate to the &quot;Sign Tx&quot; page of your app or DApp in the <a href="https://dev.squarelink.com">Developer Console</a>.</p>
+
+<p>We require the following info about the token you&#39;ll be using:</p>
+
+<ul>
+<li><p><strong>Currency:</strong> Ethereum, Bitcoin, Litecoin, or a custom ERC-20 Token (i.e. OmiseGo)</p></li>
+<li><p><strong>Whitelisted Deposit Addresses (Optional):</strong> Valid recipient addresses. <em><strong>Leave blank for any</strong></em>. For ERC-20 tokens, the deposit address is similarly the recipient of the token, not the contract address.</p></li>
+<li><p><strong>Contract Address</strong>: <em><strong>This must currently be an Etherscan-verified smart contract</strong></em>. Use it to specify an ERC-20 contract address or a general purpose smart contract on the Ethereum blockchain.</p></li>
+</ul>
+
+<p>After you&#39;ve created the token, you can navigate to the token settings in the Developer Console and use the following optional settings:</p>
+<h3 id='optional-settings'>Optional Settings:</h3>
+<ul>
+<li><p><strong>Confirmation Policy:</strong> - How quickly you&#39;d like us to consider a transaction confirmed on the blockchain. Once the transaction is confirmed, we&#39;ll send a callback to a url you&#39;ve specified. Default is medium. Use slow for high-value transactions.</p></li>
+<li><p><strong>Webhooks Callback URL</strong> - We&#39;ll send a POST request with info about a transaction to this address once it&#39;s confirmed. <a href="#using-callbacks">Read More about Callbacks</a></p></li>
+<li><p><strong>On Failure Redirect:</strong> - If there is an error sending the transaction or an issue with your request, we&#39;ll redirect the user here with a description of the error. For instance, <code>http://localhost:8080/failure?error=recipient%20is%20not%20whitelisted</code></p></li>
+<li><p><strong>On Success Redirect</strong> - When the transaction is successful, we&#39;ll redirect the user here with the transaction id and a state if provided. For instance, <code>http://localhost:8080/success?tx_id=abcdef12345&amp;state=xxxxxxx</code></p></li>
+</ul>
+<h2 id='sign-tx-button'>Sign Tx Button</h2>
+<p>Once you&#39;ve registered your token, you can navigate to your registered token&#39;s home page in the Developer Console and click on &quot;Integration Code&quot; to see the HTML button for integrating Sign Tx into your DApp.</p>
+
+<p>Depending on the currency and the features you require, there are several optional parameters you can use in your request URL. See Below.</p>
+<h3 id='ethereum'>Ethereum</h3>
+<blockquote>
+<p>This is an example of an Ethereum request</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://app.squarelink.com/tx?
+    token_id={{Your token ID}}
+    &amp;to={{An Ethereum address}}
+    &amp;amount={{amount of Ethereum}}
+    &amp;gas={{optional gas limit for tx (estimated otherwise)}}
+    &amp;description={{optional description for request}}
+    &amp;state={{optional value such as an order #}}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://squarelink.com/img/sign-tx.svg"</span> <span class="na">width=</span><span class="s">"220"</span><span class="nt">&gt;&lt;/img&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>token_id</code></td>
+<td><strong>true</strong></td>
+<td>This is the <code>token_id</code> found on your registered token&#39;s home page in the Developer Console</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><strong>true</strong></td>
+<td>An Ethereum address to receive the transaction. Must be whitelisted if you set up your token with whitelisted addresses.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td><strong>true</strong></td>
+<td>Integer amount to be transferred. <strong>Smallest divisible amount of ETH</strong>. For instance, &quot;1000&quot; = 10e-15 ETH</td>
+</tr>
+<tr>
+<td><code>gas</code></td>
+<td><em>(Optional)</em></td>
+<td>Optional gas limit for transaction. If omitted, we&#39;ll estimate it for you.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><em>(Optional)</em></td>
+<td>Description shown to the user in the request</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><em>(Optional)</em></td>
+<td>An optional CSRF token to be returned to your <code>on_success</code> redirect. Will also be returned in a callback if you&#39;ve set up callbacks.</td>
+</tr>
+</tbody></table>
+<h3 id='bitcoin-amp-litecoin'>Bitcoin &amp; Litecoin</h3>
+<blockquote>
+<p>This is an example of a Bitcoin request</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://app.squarelink.com/tx?
+    token_id={{Your token ID}}
+    &amp;to={{A Bitcoin address}}
+    &amp;amount={{amount of Bitcoin}}
+    &amp;description={{optional description for request}}
+    &amp;state={{optional value such as an order #}}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://squarelink.com/img/sign-tx.svg"</span> <span class="na">width=</span><span class="s">"220"</span><span class="nt">&gt;&lt;/img&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>token_id</code></td>
+<td><strong>true</strong></td>
+<td>This is the <code>token_id</code> found on your registered token&#39;s home page in the Developer Console</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><strong>true</strong></td>
+<td>A Bitcoin or Litecoin address to receive the transaction. Must be whitelisted if you set up your token with whitelisted addresses.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td><strong>true</strong></td>
+<td>Integer amount to be transferred. <strong>Smallest divisible amount of BTC or LTC</strong>. For instance, &quot;1000&quot; = 10e-5 BTC/LTC</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><em>(Optional)</em></td>
+<td>Description shown to the user in the request</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><em>(Optional)</em></td>
+<td>An optional CSRF token to be returned to your <code>on_success</code> redirect. Will also be returned in a callback if you&#39;ve set up callbacks.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>This is an example of a smart contract or ERC-20 request</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://app.squarelink.com/tx?
+    token_id={{Your token ID}}
+    &amp;data={{optional data field for smart contract}}
+    &amp;method={{smart contract method name (if no data)}}
+    &amp;params=[{{contract input 1}},{{contract input 2}}]
+    &amp;gas={{optional gas limit for tx (estimated otherwise)}}
+    &amp;description={{optional description for request}}
+    &amp;state={{optional value such as an order #}}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://squarelink.com/img/sign-tx.svg"</span> <span class="na">width=</span><span class="s">"220"</span><span class="nt">&gt;&lt;/img&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre><h3 id='smart-contracts-amp-erc-20-tokens'>Smart Contracts &amp; ERC-20 Tokens</h3>
+<p>For Ethereum Smart Contracts or ERC-20 Tokens, you can request a transfer directly in contract data <em>OR</em> you can specify the method you&#39;re calling and the method parameters (in the order they appear in the contract ABI).</p>
+
+<aside class="notice">For ERC-20 Tokens, we currently support the `transfer` and `approve` methods.</aside>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>token_id</code></td>
+<td><strong>true</strong></td>
+<td>This is the <code>token_id</code> found on your registered token&#39;s home page in the Developer Console</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><em>If <code>data</code> not used</em></td>
+<td>This the method you are calling in the contract ABI</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td><em>If <code>method</code> is used</em></td>
+<td>Array of values for the method parameters as they appear in the contract ABI</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td><em>If <code>method</code> not used</em></td>
+<td>If you want to handle encoding your transaction data, you can pass the <code>data</code> field instead of <code>method</code> and <code>params</code>.</td>
+</tr>
+<tr>
+<td><code>gas</code></td>
+<td><em>(Optional)</em></td>
+<td>Optional gas limit for transaction. If omitted, we&#39;ll estimate it for you.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><em>(Optional)</em></td>
+<td>Description shown to the user in the request</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><em>(Optional)</em></td>
+<td>An optional CSRF token to be returned to your <code>on_success</code> redirect. Will also be returned in a callback if you&#39;ve set up callbacks.</td>
+</tr>
+</tbody></table>
+
+<p><strong>To request 20 EXAMPLE tokens:</strong></p>
+
+<ul>
+<li><p><strong><code>method</code>:</strong> transfer</p></li>
+<li><p><strong><code>params</code>:</strong> [0xed19abdc33e91c809376b742d48ed1d935d4faee,20000000000000000000]</p></li>
+</ul>
+
+<p><em>Where EXAMPLE tokens have 18 decimal places</em></p>
+
+<p>For the protection of Squarelink users, we require that your contract is verified on Etherscan so we can access the ABI directly. We plan to build support for contract source uploads in the Developer Console so you can verify it directly with Squarelink.</p>
+<h2 id='using-callbacks'>Using Callbacks</h2>
+<blockquote>
+<p>Example Callback for ERC-20 (OmiseGo) Token</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>POST https://your-site.com/callback-url -d
+<span class="o">{</span>
+  <span class="s2">"id"</span>: <span class="s2">"0x61474003e56d67aba6bf148c5ec361e3a3c1ceea37fe3ace7d87759b399292f9"</span>
+  <span class="s2">"sub"</span>: <span class="s2">"u12345abcdef"</span>,
+  <span class="s2">"currency"</span>: <span class="s2">"ETH"</span>,
+  <span class="s2">"status"</span>: <span class="s2">"confirmed"</span>,
+  <span class="s2">"from"</span>: <span class="s2">"0x0a956129b6240784aac01b92a924c14f2e7cf932"</span>,
+  <span class="s2">"to"</span>: <span class="s2">"0xed19abdc33e91c809376b742d48ed1d935d4faee"</span>,
+  <span class="s2">"value"</span>: 0,
+  <span class="s2">"confirmations"</span>: 18,
+  <span class="s2">"block_number"</span>: 124124,
+  <span class="s2">"block_hash"</span>: <span class="s2">"fcd88715c95e6082612ab673ae3053d8bbfc51ca0b00aa82974ea4d139010015"</span>,
+  <span class="s2">"action"</span>: <span class="s2">"sent"</span>,
+  <span class="s2">"decimals"</span>: 18,
+  <span class="s2">"date"</span>: 12421524,
+  <span class="s2">"token_symbol"</span>: <span class="s2">"OMG"</span>,
+  <span class="s2">"token_decimals"</span>: 18,
+  <span class="s2">"token_name"</span>: <span class="s2">"OmiseGo"</span>,
+  <span class="s2">"token_value"</span>: 200000000000,
+  <span class="s2">"contract_address"</span>: <span class="s2">"0xd26114cd6EE289AccF82350c8d8487fedB8A0C07"</span>,
+  <span class="s2">"gas"</span>: 84000,
+  <span class="s2">"gas_price"</span>: 200000000000,
+  <span class="s2">"gas_used"</span>: 44840,
+  <span class="s2">"data"</span>: <span class="s2">"0xa9059cbb000000000000000000000000ed19abdc33e91c809376b742d48ed1d935d4faef000000000000000000000000000000000000000000000001158e460913d00000"</span>,
+  <span class="s2">"nonce"</span>: 1,
+  <span class="s2">"state"</span>: <span class="s2">"optionalCSRFToken"</span>
+<span class="o">}</span>
+</code></pre>
+<p>Callbacks allow us to send you updates about your users&#39; transactions. This requires that you&#39;ve set the Webhooks Callback URL in your registered token&#39;s settings in the Developer Console.</p>
+
+<p>The data returned in the callback complies with our <a href="#transaction-object"><strong>Transaction Model</strong></a> as defined in the <a href="#api-reference">API Reference</a></p>
+
+<p>Based on the Confirmation Policy you&#39;ve set, we&#39;ll send a POST request to the specified Callback URL with information about a transaction once it&#39;s confirmed.</p>
+
+<p>We will make 5 attempted callbacks, each 10 seconds apart, before we discard a callback request.</p>
+
+<aside class="warning">Note: We do not allow any loopback URLs such as `localhost`, `127.0.0.1`, etc.</aside>
+<h2 id='live-examples'>Live Examples</h2>
+<aside class="notice">All examples are implemented using Squarelink's internally Registered App and Tokens</aside>
+
+<blockquote>
+<p>HTML for Ethereum example</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://app.squarelink.com/tx?
+    token_id=t00d1c3d094e5bf0eba6ca7846ab88c2a
+    &amp;amount=10000000000000000
+    &amp;to=0xed19abdc33e91c809376b742d48ed1d935d4faef
+    &amp;description=You're about to donate 0.01 Ethereum to Squarelink"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://squarelink.com/img/sign-tx.svg"</span> <span class="na">width=</span><span class="s">"250"</span><span class="nt">&gt;&lt;/img&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre><h3 id='send-0-01-eth-to-squarelink'>Send 0.01 ETH to Squarelink</h3>
+<p><a href="https://app.squarelink.com/tx?token_id=t00d1c3d094e5bf0eba6ca7846ab88c2a&amount=10000000000000000&to=0xed19abdc33e91c809376b742d48ed1d935d4faef&description=You're about to donate 0.01 Ethereum to Squarelink">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a></p>
+
+<blockquote>
+<p>HTML for OmiseGo example (using method &amp; parameters)</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://app.squarelink.com/tx?
+    token_id=t909cb74a5546fc7961627554ca355b7b
+    &amp;method=transfer
+    &amp;params=[0xed19abdc33e91c809376b742d48ed1d935d4faef,10000000000000000000]
+    &amp;description=You're about to donate 10 OMG to Squarelink."</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://squarelink.com/img/sign-tx.svg"</span> <span class="na">width=</span><span class="s">"250"</span><span class="nt">&gt;&lt;/img&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+<p><br><br><br><br></p>
+<h3 id='send-10-omisego-to-squarelink-using-method-amp-parameters'>Send 10 OmiseGo to Squarelink (using method &amp; parameters)</h3>
+<p><a href="https://app.squarelink.com/tx?token_id=t909cb74a5546fc7961627554ca355b7b&method=transfer&params=[0xed19abdc33e91c809376b742d48ed1d935d4faef,10000000000000000000]&description=You're about to donate 10 OMG to Squarelink">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a></p>
+
+<blockquote>
+<p>HTML for OmiseGo example (using contract data)</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://app.squarelink.com/tx?
+    token_id=t909cb74a5546fc7961627554ca355b7b
+    &amp;data=0xa9059cbb000000000000000000000000ed19abdc33e91c809376b742d48ed1d935d4faef0000000000000000000000000000000000000000000000008ac7230489e80000
+    &amp;description=You're about to donate 10 OMG to Squarelink."</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://squarelink.com/img/sign-tx.svg"</span> <span class="na">width=</span><span class="s">"250"</span><span class="nt">&gt;&lt;/img&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+<p><br><br><br><br></p>
+<h3 id='send-10-omisego-to-squarelink-using-contract-data'>Send 10 OmiseGo to Squarelink (using contract data)</h3>
+<p><a href="https://app.squarelink.com/tx?token_id=t909cb74a5546fc7961627554ca355b7b&data=0xa9059cbb000000000000000000000000ed19abdc33e91c809376b742d48ed1d935d4faef0000000000000000000000000000000000000000000000008ac7230489e80000&description=You're about to donate 10 OMG to Squarelink.">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a></p>
+
+<blockquote>
+<p>HTML for BTC example</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://app.squarelink.com/tx?
+    token_id=t26e6e45d7912d26f46ae9258939e1070
+    &amp;amount=1000000
+    &amp;to=1dice8EMZmqKvrGE4Qc9bUFf9PX3xaYDp
+    &amp;description=You're about to donate 0.01 BTC to Squarelink"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://squarelink.com/img/sign-tx.svg"</span> <span class="na">width=</span><span class="s">"250"</span><span class="nt">&gt;&lt;/img&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+<p><br><br><br></p>
+<h3 id='send-0-1-btc-to-squarelink'>Send 0.1 BTC to Squarelink</h3>
+<p><a href="https://app.squarelink.com/tx?token_id=t26e6e45d7912d26f46ae9258939e1070&amount=1000000&to=1dice8EMZmqKvrGE4Qc9bUFf9PX3xaYDp&description=You're about to donate 0.01 BTC to Squarelink">
+    <img src="https://squarelink.com/img/sign-tx.svg" width="250"></img>
+</a></p>
+<h1 id='api-reference'>API Reference</h1>
+<p>By now, you have registered your app or DApp and integrated the Squarelink Sign In button. If you haven&#39;t done so already, <a href="#sign-in-integration">read how</a>.</p>
+
+<p>For any of the following API Routes, we expect that you have <a href="#obtain-an-access-token">obtained an access token</a> for your user&#39;s Squarelink account.</p>
+
+<p><em><strong>API Endpoint:</strong></em> <em><a href="#">https://api.squarelink.com</a></em></p>
+
+<aside class="notice">All routes are currently GET requests exclusively for viewing user's account info</aside>
+<h2 id='user-info'>User Info</h2><h3 id='get-user'>GET /user</h3>
+<blockquote>
+<p>GET /user request example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>GET https://api.squarelink.com/user?access_token<span class="o">=</span>xxx.xxxxx.xxx
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>: <span class="nb">true</span>,
+  <span class="s2">"id"</span>: <span class="s2">"uabcdef132345"</span>,
+  <span class="s2">"email"</span>: <span class="s2">"satoshi@squarelink.com"</span>,
+  <span class="s2">"family_name"</span>: <span class="s2">"Nakamoto"</span>,
+  <span class="s2">"given_name"</span>: <span class="s2">"Satoshi"</span>,
+  <span class="s2">"created"</span>: 114012480
+<span class="o">}</span>
+</code></pre>
+<aside class="notice">You must be authorized for the <i>user</i> scope to access this route</aside>
+
+<p>Read a user&#39;s Squarelink Account info such as their email, family name, and given name with this route</p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>access_token</code></strong></td>
+<td><strong>String</strong></td>
+<td><em>(Required)</em> The access token you received for a Squarelink user</td>
+</tr>
+</tbody></table>
+<h3 id='response-body'>Response Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>success</code></strong></td>
+<td><strong>Boolean</strong></td>
+<td>Indicates if the request was successful</td>
+</tr>
+<tr>
+<td><strong><code>id</code></strong></td>
+<td><strong>String</strong></td>
+<td>The user&#39;s Squarelink User ID</td>
+</tr>
+<tr>
+<td><strong><code>email</code></strong></td>
+<td><strong>String</strong></td>
+<td>The user&#39;s email address</td>
+</tr>
+<tr>
+<td><strong><code>family_name</code></strong></td>
+<td><strong>String</strong></td>
+<td>The user&#39;s last name</td>
+</tr>
+<tr>
+<td><strong><code>given_name</code></strong></td>
+<td><strong>String</strong></td>
+<td>The user&#39;s first name</td>
+</tr>
+<tr>
+<td><strong><code>created</code></strong></td>
+<td><strong>Number</strong></td>
+<td>When the user&#39;s account was created <em>(seconds from the Epoch)</em></td>
+</tr>
+</tbody></table>
+<h2 id='wallets'>Wallets</h2>
+<blockquote>
+<p>GET /wallets request all currencies &amp; ERC-20s</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>GET https://api.squarelink.com/wallets?
+  <span class="nv">access_token</span><span class="o">=</span>xxx.xxxxx.xxx
+  &amp;currencies<span class="o">=</span>ETH;BTC;LTC
+  &amp;erc20<span class="o">=</span><span class="nb">true</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>: <span class="nb">true</span>,
+  <span class="s2">"wallets"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"balance"</span>: 2130542438999998500,
+      <span class="s2">"owner"</span>: <span class="s2">"u12345wabcdef"</span>
+      <span class="s2">"currency"</span>: <span class="s2">"ETH"</span>,
+      <span class="s2">"decimals"</span>: 18,
+      <span class="s2">"name"</span>: <span class="s2">"Ethereum"</span>,
+      <span class="s2">"address"</span>: <span class="s2">"0x223b22347674da1797120327991d315b22dc1030"</span>,
+      <span class="s2">"created_on"</span>: 1539049741
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"owner"</span>: <span class="s2">"u12345wabcdef"</span>,
+      <span class="s2">"currency"</span>: <span class="s2">"LTC"</span>,
+      <span class="s2">"decimals"</span>: 8,
+      <span class="s2">"name"</span>: <span class="s2">"Litecoin"</span>,
+      <span class="s2">"address"</span>: <span class="s2">"LLTpMYh8iFDrCdWvhQTwUa1vLNEq4hGbTv"</span>,
+      <span class="s2">"testnet"</span>: <span class="s2">"mmnwrGcPTvfeF4BeX9eZuoZYs4FMVPqNFH"</span>,
+      <span class="s2">"created_on"</span>: 1539049741,
+      <span class="s2">"balance"</span>: 39020091001
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"balance"</span>: 2079775461857,
+      <span class="s2">"owner"</span>: <span class="s2">"u12345wabcdef"</span>,
+      <span class="s2">"currency"</span>: <span class="s2">"BTC"</span>,
+      <span class="s2">"decimals"</span>: 8,
+      <span class="s2">"name"</span>: <span class="s2">"Bitcoin"</span>,
+      <span class="s2">"address"</span>: <span class="s2">"1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s"</span>,
+      <span class="s2">"testnet"</span>: <span class="s2">"mvzD7yesRStzoSEagBAS1C1Cd38xwgDZ1Z"</span>,
+      <span class="s2">"created_on"</span>: 1539049741,
+     <span class="o">}</span>
+  <span class="o">]</span>,
+  <span class="s2">"erc20"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"balance"</span>: 124800000,
+      <span class="s2">"decimals"</span>: 18,
+      <span class="s2">"contract_address"</span>: <span class="s2">"0x595832f8fc6bf59c85c527fec3740a1b7a361269"</span>,
+      <span class="s2">"symbol"</span>: <span class="s2">"POWR"</span>,
+      <span class="s2">"name"</span>: <span class="s2">"PowerLedger"</span>
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"balance"</span>: 7.900590853137982e+21,
+      <span class="s2">"decimals"</span>: 18,
+      <span class="s2">"contract_address"</span>: <span class="s2">"0xd26114cd6ee289accf82350c8d8487fedb8a0c07"</span>,
+      <span class="s2">"symbol"</span>: <span class="s2">"OMG"</span>,
+      <span class="s2">"name"</span>: <span class="s2">"OmiseGo"</span>
+    <span class="o">}</span>
+  <span class="o">]</span>  
+<span class="o">}</span>
+</code></pre>
+<aside class="notice">All balances are passed in the smallest non-divisible value the respective currency supports</aside>
+<h3 id='get-wallets'>GET /wallets</h3>
+<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope</aside>
+
+<p>Get a list of a Squarelink user&#39;s wallets and public information about those wallets. Optionally, if you&#39;re authorized with the <code>wallets:read</code> or <code>wallets:read:eth</code> scopes, you can request a list of active ERC-20 balances for the user as well.  </p>
+<h3 id='request-parameters-2'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>access_token</code></strong></td>
+<td><strong>String</strong></td>
+<td><em>(Required)</em> The access token you received for a Squarelink user</td>
+</tr>
+<tr>
+<td><strong><code>currencies</code></strong></td>
+<td><strong>String</strong></td>
+<td>A semi-colon-separated list of currencies for the wallets you&#39;d like to request. Valid currencies are <code>ETH</code>, <code>BTC</code>, and <code>LTC</code>.</td>
+</tr>
+<tr>
+<td><strong><code>erc20</code></strong></td>
+<td><strong>Boolean</strong></td>
+<td>Indicate whether you&#39;d like us to return all valid ERC-20 balances. Only available if you&#39;re authorized for the <code>wallets:read</code> or <code>wallets:read:eth</code> scopes.</td>
+</tr>
+</tbody></table>
+<h3 id='response-body-2'>Response Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>success</code></strong></td>
+<td><strong>Boolean</strong></td>
+<td>Indicates if the request was successful</td>
+</tr>
+<tr>
+<td><strong><code>wallets</code></strong></td>
+<td><strong>Array</strong></td>
+<td>A list of <a href="#wallet-object">Wallet Objects</a></td>
+</tr>
+<tr>
+<td><strong><code>erc20</code></strong></td>
+<td><strong>Array</strong></td>
+<td>A list of <a href="#erc-20-object">ERC-20 Objects</a> (if you specified <code>erc20 = true</code>)</td>
+</tr>
+</tbody></table>
+<h3 id='wallet-object'>Wallet Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>owner</code></strong></td>
+<td><strong>String</strong></td>
+<td>The ID of the Squarelink user owning the wallet</td>
+</tr>
+<tr>
+<td><strong><code>currency</code></strong></td>
+<td><strong>String</strong></td>
+<td>The currency of the wallet</td>
+</tr>
+<tr>
+<td><strong><code>balance</code></strong></td>
+<td><strong>Float</strong></td>
+<td>Whole number balance of the wallet, measured in the lowest non-divisible amount of its currency</td>
+</tr>
+<tr>
+<td><strong><code>decimals</code></strong></td>
+<td><strong>Integer</strong></td>
+<td>Number of decimal places the currency uses (i.e. 18 for ETH) for its lowest non-divisible amounts</td>
+</tr>
+<tr>
+<td><strong><code>name</code></strong></td>
+<td><strong>String</strong></td>
+<td>The name of the currency (i.e. &quot;Bitcoin&quot;)</td>
+</tr>
+<tr>
+<td><strong><code>address</code></strong></td>
+<td><strong>String</strong></td>
+<td>The public address of the wallet</td>
+</tr>
+<tr>
+<td><strong><code>testnet</code></strong></td>
+<td><strong>String</strong></td>
+<td>The testnet address of the wallet (if BTC or LTC)</td>
+</tr>
+<tr>
+<td><strong><code>created_on</code></strong></td>
+<td><strong>Integer</strong></td>
+<td>Date created on Squarelink (number of seconds since the Epoch)</td>
+</tr>
+</tbody></table>
+<h3 id='erc-20-object'>ERC-20 Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>balance</code></strong></td>
+<td><strong>Float</strong></td>
+<td>Whole number amount of ERC-20 tokens held by the user&#39;s account (lowest non-divisible amount)</td>
+</tr>
+<tr>
+<td><strong><code>decimals</code></strong></td>
+<td><strong>Integer</strong></td>
+<td>Number of decimal places specified in the currency&#39;s contract</td>
+</tr>
+<tr>
+<td><strong><code>contract_address</code></strong></td>
+<td><strong>String</strong></td>
+<td>The contract address of the ERC-20 token</td>
+</tr>
+<tr>
+<td><strong><code>symbol</code></strong></td>
+<td><strong>String</strong></td>
+<td>The token symbol for the ERC-20 token (i.e. POWR for PowerLedger)</td>
+</tr>
+<tr>
+<td><strong><code>name</code></strong></td>
+<td><strong>String</strong></td>
+<td>The ERC-20&#39;s name (i.e. PowerLedger)</td>
+</tr>
+<tr>
+<td><strong><code>address</code></strong></td>
+<td><strong>String</strong></td>
+<td>The Squarelink user&#39;s Ethereum address holding these tokens</td>
+</tr>
+</tbody></table>
+<h2 id='transactions'>Transactions</h2>
+<aside class="notice">All token amounts are passed in the smallest non-divisible value the respective currency supports</aside>
+<h3 id='get-txs'>GET /txs</h3>
+<blockquote>
+<p>GET /txs Example Request (txs for ETH, BTC, LTC, and an ERC-20 token)</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>GET https://api.squarelink.com/txs?
+  <span class="nv">access_token</span><span class="o">=</span>xxx.xxxxx.xxx
+  &amp;currencies<span class="o">=</span>ETH;LTC;BTC
+  &amp;token_contracts<span class="o">=</span>0xba5f00a28f732f23ba946c594716496ebdc9aef5
+  &amp;page<span class="o">=</span>1
+  &amp;per_page<span class="o">=</span>4
+</code></pre>
+<blockquote>
+<p>Response Body</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"success"</span>: <span class="s2">"true"</span>,
+  <span class="s2">"page_count"</span>: 23,
+  <span class="s2">"per_page"</span>: 4,
+  <span class="s2">"page"</span>: 1,
+  <span class="s2">"txs"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"currency"</span>: <span class="s2">"BTC"</span>,
+      <span class="s2">"id"</span>: <span class="s2">"5ee585d5f7f7be8b056991042e6bf092e2e2a2324e217591124393c1259f0f59"</span>,
+      <span class="s2">"sub"</span>: <span class="s2">"u12345abcdef"</span>,
+      <span class="s2">"action"</span>: <span class="s2">"received"</span>,
+      <span class="s2">"block_number"</span>: null,
+      <span class="s2">"confirmations"</span>: 0,
+      <span class="s2">"date"</span>: 1539145879,
+      <span class="s2">"decimals"</span>: 8,
+      <span class="s2">"from"</span>: <span class="s1">'36yKKUFiKzCoFh5QrHivpJVSYQwYwG6Hms'</span>,
+      <span class="s2">"status"</span>: <span class="s2">"pending"</span>,
+      <span class="s2">"to"</span>: <span class="s2">"1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s"</span>,
+      <span class="s2">"value"</span>: 10000000000
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"currency"</span>: <span class="s2">"LTC"</span>,
+      <span class="s2">"id"</span>: <span class="s2">"71f2e39bf9834c9eee7289d435a4f2fd294dc8576934fb91212f536e5ac7bca4"</span>,
+      <span class="s2">"sub"</span>: <span class="s2">"u12345abcdef"</span>,
+      <span class="s2">"action"</span>: <span class="s2">"received"</span>,
+      <span class="s2">"block_number"</span>: 1498994,
+      <span class="s2">"confirmations"</span>: 7615,
+      <span class="s2">"date"</span>: 1538002833,
+      <span class="s2">"decimals"</span>: 8,
+      <span class="s2">"from"</span>: <span class="s2">"LXphMWB3FwvMKXEzjJhGWXMeLzVZfUEcci"</span>,
+      <span class="s2">"status"</span>: <span class="s2">"confirmed"</span>,
+      <span class="s2">"to"</span>: <span class="s2">"LLTpMYh8iFDrCdWvhQTwUa1vLNEq4hGbTv"</span>,
+      <span class="s2">"value"</span>: 639798772
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"currency"</span>: <span class="s2">"ETH"</span>,
+      <span class="s2">"id"</span>: <span class="s2">"0xb3730f2b2af151a0aac5aca15bebb2b0b1fb242ca67c180045ff707e2f386cd0"</span>,
+      <span class="s2">"sub"</span>: <span class="s2">"u12345abcdef"</span>,
+      <span class="s2">"action"</span>: <span class="s2">"sent"</span>,
+      <span class="s2">"block_hash"</span>:
+       <span class="s2">"0xa19cce7bf340f866101aa1fb4a2500f168bb11436934128d32b3553fbb9b7abc"</span>,
+      <span class="s2">"block_number"</span>: 4854110,
+      <span class="s2">"confirmations"</span>: 1693271,
+      <span class="s2">"contract_address"</span>: null,
+      <span class="s2">"data"</span>: null,
+      <span class="s2">"date"</span>: 1515090524,
+      <span class="s2">"decimals"</span>: 18,
+      <span class="s2">"from"</span>: <span class="s2">"0x223b22347674da1797120327991d315b22dc1030"</span>,
+      <span class="s2">"gas"</span>: 21000,
+      <span class="s2">"gas_price"</span>: 31000000000,
+      <span class="s2">"gas_used"</span>: 21000,
+      <span class="s2">"index"</span>: 78,
+      <span class="s2">"nonce"</span>: 22,
+      <span class="s2">"status"</span>: <span class="s2">"confirmed"</span>,
+      <span class="s2">"to"</span>: <span class="s2">"0x5700333a342bc21bf400c66ab0685867c4dde332"</span>,
+      <span class="s2">"value"</span>: 100000000000000000
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"currency"</span>: <span class="s2">"ETH"</span>,
+      <span class="s2">"id"</span>: <span class="s2">"0x8372289b2b811ca6b66797cd28a51af63b5468d57b505643716b0bb82be4387b"</span>,
+      <span class="s2">"sub"</span>: <span class="s2">"u12345abcdef"</span>,
+      <span class="s2">"action"</span>: <span class="s2">"received"</span>,
+      <span class="s2">"block_hash"</span>: <span class="s2">"0x479ee01736fe8db8662fe48ecec923f00d1403daac5e55c6bfeba76d1e5ba18f"</span>,
+      <span class="s2">"block_number"</span>: 5860219,
+      <span class="s2">"confirmations"</span>: 687162,
+      <span class="s2">"contract_address"</span>: <span class="s2">"0xba5f00a28f732f23ba946c594716496ebdc9aef5"</span>,
+      <span class="s2">"data"</span>: <span class="s2">"0xa9059cbb000000000000000000000000223b22347674da1797120327991d315b22dc103000000000000000000000000000000000000000000000006d6639464dd6100000"</span>,
+      <span class="s2">"date"</span>: 1530057183,
+      <span class="s2">"decimals"</span>: 18,
+      <span class="s2">"from"</span>: <span class="s2">"0x00f9252f87531fdb919a686e3e21d006a6304658"</span>,
+      <span class="s2">"gas"</span>: 61000,
+      <span class="s2">"gas_price"</span>: 3300000000,
+      <span class="s2">"gas_used"</span>: 53355,
+      <span class="s2">"index"</span>: 52,
+      <span class="s2">"nonce"</span>: 20709,
+      <span class="s2">"status"</span>: <span class="s2">"confirmed"</span>,
+      <span class="s2">"to"</span>: <span class="s2">"0x223b22347674da1797120327991d315b22dc1030"</span>,
+      <span class="s2">"token_decimals"</span>: null,
+      <span class="s2">"token_name"</span>: <span class="s2">"OmiseGo"</span>,
+      <span class="s2">"token_symbol"</span>: <span class="s2">"OMG"</span>,
+      <span class="s2">"token_value"</span>: 2.0180611e+21,
+      <span class="s2">"value"</span>: 0
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+</code></pre>
+<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope</aside>
+
+<p>You can use this route to list a Squarelink user&#39;s transactions by currency, including specific ERC-20 token transactions or <em>all</em> ERC-20 token transactions. <em>Note:</em> all transaction requests are paginated.</p>
+<h3 id='request-parameters-3'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>access_token</code></strong></td>
+<td><strong>String</strong></td>
+<td><em>(Required)</em> The access token you received for a Squarelink user</td>
+</tr>
+<tr>
+<td><strong><code>currencies</code></strong></td>
+<td><strong>String</strong></td>
+<td>A semi-colon-separated list of currencies for the transactions you&#39;d like to request. Valid currencies are <code>ETH</code>, <code>BTC</code>, and <code>LTC</code>.</td>
+</tr>
+<tr>
+<td><strong><code>token_contracts</code></strong></td>
+<td><strong>String</strong></td>
+<td>A semi-colon-separated list of contract addresses for ERC-20 tokens that you want to request transactions for. Only available if you&#39;re authorized for the <code>wallets:read</code> or <code>wallets:read:eth</code> scopes.</td>
+</tr>
+<tr>
+<td><strong><code>all_erc20</code></strong></td>
+<td><strong>Boolean</strong></td>
+<td>Indicate whether you&#39;d like us to return all ERC-20 transactions for a user. Only available if you&#39;re authorized for the <code>wallets:read</code> or <code>wallets:read:eth</code> scopes.</td>
+</tr>
+<tr>
+<td><strong><code>page</code></strong></td>
+<td><strong>Number</strong></td>
+<td><em>(Default: 1).</em> The page number for the paginated request.</td>
+</tr>
+<tr>
+<td><strong><code>per_page</code></strong></td>
+<td><strong>Number</strong></td>
+<td><em>(Default: 10)</em> The number of transactions you&#39;d like per page. <em>Max is 20</em></td>
+</tr>
+</tbody></table>
+<h3 id='response-body-3'>Response Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>success</code></strong></td>
+<td><strong>Boolean</strong></td>
+<td>Indicates if the request was successful</td>
+</tr>
+<tr>
+<td><strong><code>txs</code></strong></td>
+<td><strong>Array</strong></td>
+<td>An array of <a href="#transaction-object">Transaction Objects</a></td>
+</tr>
+<tr>
+<td><strong><code>page_count</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Number of pages available</td>
+</tr>
+<tr>
+<td><strong><code>page</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Current page</td>
+</tr>
+<tr>
+<td><strong><code>per_page</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Results per page</td>
+</tr>
+</tbody></table>
+<h3 id='transaction-object'>Transaction Object</h3>
+<aside class="warning">The transaction model and routes are currently experimental. If you require additional information about a transaction, we recommend using a dedicated Blockchain explorer API</aside>
+
+<p>Our transaction object has a large number of parameters which allows us to ubiquitously collect transactions across multiple blockchains. Please note the fields that are specific to certain blockchains and types of transactions.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>currency</code></strong></td>
+<td><strong>String</strong></td>
+<td>ETH, BTC, or LTC (ETH for ERC-20 txs)</td>
+</tr>
+<tr>
+<td><strong><code>id</code></strong></td>
+<td><strong>String</strong></td>
+<td>The transaction hash on the blockchain</td>
+</tr>
+<tr>
+<td><strong><code>sub</code></strong></td>
+<td><strong>String</strong></td>
+<td>The sender or recipient&#39;s Squarelink account ID</td>
+</tr>
+<tr>
+<td><strong><code>from</code></strong></td>
+<td><strong>String</strong></td>
+<td>Sending address of the transaction</td>
+</tr>
+<tr>
+<td><strong><code>to</code></strong></td>
+<td><strong>String</strong></td>
+<td>Recipient address of the transaction</td>
+</tr>
+<tr>
+<td><strong><code>value</code></strong></td>
+<td><strong>Float</strong></td>
+<td>Token value sent measured in lowest non-divisible units of the token (ETH for ERC-20 tokens)</td>
+</tr>
+<tr>
+<td><strong><code>action</code></strong></td>
+<td><strong>String</strong></td>
+<td>&quot;sent&quot; or &quot;received&quot;</td>
+</tr>
+<tr>
+<td><strong><code>date</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Datetime the transaction was broadcast. Number of seconds since the epoch.</td>
+</tr>
+<tr>
+<td><strong><code>decimals</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Number of decimals for the base currency (i.e. 18 for ETH, 8 for BTC)</td>
+</tr>
+<tr>
+<td><strong><code>block_number</code></strong></td>
+<td><strong>Number</strong></td>
+<td>The index of the block on the blockchain</td>
+</tr>
+<tr>
+<td><strong><code>confirmations</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Number of times a transaction has been confirmed</td>
+</tr>
+<tr>
+<td><strong><code>status</code></strong></td>
+<td><strong>String</strong></td>
+<td>&quot;confirmed&quot;, &quot;pending&quot;, or &quot;failed&quot;</td>
+</tr>
+<tr>
+<td><strong><code>block_hash</code></strong></td>
+<td><strong>String</strong></td>
+<td>The hash of the block the transaction is found in (unless it is the most recent block) <em>(If ETH transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>data</code></strong></td>
+<td><strong>String</strong></td>
+<td>Contract data field <em>(if ETH transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>gas</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Gas limit used for the transaction <em>(if ETH transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>gas_price</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Gas price in lowest non-divisible amount of Ether <em>(if ETH transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>gas_used</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Amount of gas used for the transaction <em>(if ETH transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>index</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Index of a transaction in a block <em>(if ETH transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>nonce</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Nonce of a transaction for a user&#39;s address <em>(if ETH transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>contract_address</code></strong></td>
+<td><strong>String</strong></td>
+<td>The contract address of an ERC-20 token <em>(if ERC-20 transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>token_decimals</code></strong></td>
+<td><strong>Number</strong></td>
+<td>Decimals specified by the ERC-20 token contract <em>(if ERC-20 transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>token_name</code></strong></td>
+<td><strong>String</strong></td>
+<td>Token name specified by the ERC-20 token contract <em>(if ERC-20 transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>token_symbol</code></strong></td>
+<td><strong>String</strong></td>
+<td>Token symbol specified by the ERC-20 token contract <em>(if ERC-20 transaction)</em></td>
+</tr>
+<tr>
+<td><strong><code>token_value</code></strong></td>
+<td><strong>Float</strong></td>
+<td>ERC-20 token value transferred measured in the smallest non-divisible units of the token <em>(if ERC-20 transaction)</em></td>
+</tr>
+</tbody></table>
+<h1 id='community'>Community</h1>
+<p>Squarelink&#39;s Developer tools are community-driven projects for blockchain developers. We are currently in Beta and have not yet open-sourced any core technology. However, we would like to give Squarelink users and developers the opportunity to drive the direction of the project.</p>
+
+<p>In order to request feature modifications or additions, you can either email <a href="mailto://support@squarelink.com">support@squarelink.com</a> <em>OR</em> you may submit a pull-request on Squarelink&#39;s Improvement Proposals repository <a href="https://github.com/Squarelink-Inc/SIPs">here</a>. Please read the instructions in the README before submitting a pull request.</p>
+
+<p><strong><a href="http://eepurl.com/dv4Lr1">Subscribe to our mailing list</a> to receive updates on the project</strong></p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
