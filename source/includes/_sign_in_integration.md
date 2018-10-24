@@ -97,7 +97,7 @@ We will redirect to your application with a URL parameter called `code` as well 
 
 You can now exchange `code` (and `state` if used) for an access token using Squarelink's OAuth API.
 
-<aside class="success">Now your ready to use the Squarelink API]. Use the resulting access token in all requests</aside>
+<aside class="success">Now you're ready to use the Squarelink API]. Use the resulting access token in all requests</aside>
 
 ### _**Request Endpoint:**_ *[https://oauth.squarelink.com/token]()*
 
