@@ -1,13 +1,11 @@
 ## Squarelink Developer Documentation
 
-Built using Slate
-
 ### Documentation Home Page: [https://squarelink.com/docs](https://squarelink.com/docs)
 
 ### Contributing to the Docs
 
 1. Fork this repository on GitHub.
-2. Clone *your forked repository* (not our original one) to your hard drive with `git clone https://github.com/YOURUSERNAME/slate.git`
+2. Clone *your forked repository* (not our original one) to your hard drive with `git clone https://github.com/YOURUSERNAME/Squarelink-Docs.git`
 3. `cd slate`
 4. Initialize and start Slate. You can either do this locally, or with Vagrant:
 
