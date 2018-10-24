@@ -3,6 +3,8 @@
 
 With the Squarelink Sign In button, you can authenticate your users and access info about their Squarelink accounts in minutes.
 
+Want to see it in action? **Check out this [example application](https://squarelink-inc.github.io/Sign-In-Example)**
+
 If you have not done so already, please [register your app or DApp](#getting-started) in the [Squarelink Developer Console](https://dev.squarelink.com)
 
 ## Set Up Your App
