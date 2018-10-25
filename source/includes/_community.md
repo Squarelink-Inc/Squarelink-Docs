@@ -10,4 +10,6 @@ In order to request feature modifications or additions, you can either email [su
 
 We do not currently have an established bug bounty program. However, if you spot any bugs, please email [support@squarelink.com](mailto://support@squarelink.com) with a description of the issues you're experiencing.
 
+You may also open an Issue on the [Squarelink Improvement Proposals repository](https://github.com/Squarelink-Inc/SIPs) with a description of the issue you're experiencing.
+
 <br><br><br>
