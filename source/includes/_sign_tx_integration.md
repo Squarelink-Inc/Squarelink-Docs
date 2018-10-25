@@ -38,6 +38,8 @@ After you've created the token, you can navigate to the token settings in the De
 
 Once you've registered your token, you can navigate to your registered token's home page in the Developer Console and click on "Integration Code" to see the HTML button for integrating Sign Tx into your DApp.
 
+On the page for the new token created, you'll see a `token_id` - you'll need to pass it as a parameter in any transaction requests. It acts similarly to your `client_id` and allows us to check against any whitelisted addresses you may have. 
+
 Depending on the currency and the features you require, there are several optional parameters you can use in your request URL. See Below.
 
 ### Ethereum
