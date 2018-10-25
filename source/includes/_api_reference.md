@@ -5,9 +5,9 @@ By now, you have registered your app or DApp and integrated the Squarelink Sign 
 
 For any of the following API Routes, we expect that you have [obtained an access token](#obtain-an-access-token) for your user's Squarelink account.
 
-_**API Endpoint:**_ *[https://api.squarelink.com]()*
+_**API Endpoint:**_ *[https://api.squarelink.com](https://api.squarelink.com)*
 
-<aside class="notice">All routes are currently GET requests exclusively for viewing user's account info</aside>
+<aside class="notice">All routes are currently GET requests exclusively for viewing user's account info.</aside>
 
 ## User Info
 
@@ -31,9 +31,9 @@ GET https://api.squarelink.com/user?access_token=xxx.xxxxx.xxx
 }
 ```
 
-<aside class="notice">You must be authorized for the <i>user</i> scope to access this route</aside>
+<aside class="notice">You must be authorized for the <i>user</i> scope to access this route.</aside>
 
-Read a user's Squarelink Account info such as their email, family name, and given name with this route
+Read a user's Squarelink Account info such as their email, family name, and given name with this route:
 
 ### Request Parameters
 Parameter | Type | Description
@@ -116,10 +116,10 @@ GET https://api.squarelink.com/wallets?
 }
 ```
 
-<aside class="notice">All balances are passed in the smallest non-divisible value the respective currency supports</aside>
+<aside class="notice">All balances are passed in the smallest non-divisible value the respective currency supports.</aside>
 
 ### GET /wallets
-<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope</aside>
+<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope.</aside>
 
 Get a list of a Squarelink user's wallets and public information about those wallets. Optionally, if you're authorized with the `wallets:read` or `wallets:read:eth` scopes, you can request a list of active ERC-20 balances for the user as well.  
 
@@ -162,7 +162,7 @@ Parameter | Type | Description
 **`address`** | **String** | The Squarelink user's Ethereum address holding these tokens
 
 ## Transactions
-<aside class="notice">All token amounts are passed in the smallest non-divisible value the respective currency supports</aside>
+<aside class="notice">All token amounts are passed in the smallest non-divisible value the respective currency supports.</aside>
 
 ### GET /txs
 > GET /txs Example Request (txs for ETH, BTC, LTC, and an ERC-20 token)
@@ -265,9 +265,9 @@ GET https://api.squarelink.com/txs?
 }
 ```
 
-<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope</aside>
+<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope.</aside>
 
-You can use this route to list a Squarelink user's transactions by currency, including specific ERC-20 token transactions or *all* ERC-20 token transactions. *Note:* all transaction requests are paginated.
+You can use this route to list a Squarelink user's transactions by currency, including specific ERC-20 token transactions or *all* ERC-20 token transactions. *Note:* All transaction requests are paginated.
 
 ### Request Parameters
 Parameter | Type | Description
@@ -290,7 +290,7 @@ Parameter | Type | Description
 
 ### Transaction Object
 
-<aside class="warning">The transaction model and routes are currently experimental. If you require additional information about a transaction, we recommend using a dedicated Blockchain explorer API</aside>
+<aside class="warning">The transaction model and routes are currently experimental. If you require additional information about a transaction, we recommend using a dedicated Blockchain explorer API.</aside>
 
 Our transaction object has a large number of parameters which allows us to ubiquitously collect transactions across multiple blockchains. Please note the fields that are specific to certain blockchains and types of transactions.
 
@@ -307,7 +307,7 @@ Parameter | Type | Description
 **`decimals`** | **Number** | Number of decimals for the base currency (i.e. 18 for ETH, 8 for BTC)
 **`block_number`** | **Number** | The index of the block on the blockchain
 **`confirmations`** | **Number** | Number of times a transaction has been confirmed
-**`status`** | **String** | "confirmed", "pending", or "failed"
+**`status`** | **String** | `confirmed`, `pending`, or `failed`
 **`block_hash`** | **String** | The hash of the block the transaction is found in (unless it is the most recent block) *(If ETH transaction)*
 **`data`** | **String** | Contract data field *(if ETH transaction)*
 **`gas`** | **Number** | Gas limit used for the transaction *(if ETH transaction)*

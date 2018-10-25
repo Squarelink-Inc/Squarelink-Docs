@@ -7,40 +7,40 @@ Rather than building your own custodial wallet or requiring your customers use t
 
 Squarelink's "Sign Tx" button allows DApps to request Ethereum, Bitcoin, Litecoin, or other Ethereum-based tokens (i.e. ERC-20s) from Squarelink users.
 
-To get started, you'll need to register one of these tokens or smart contracts with your DApp in the [Developer Console](https://dev.squarelink.com)
+To get started, you'll need to register one of these tokens or smart contracts with your DApp in the [Developer Console](https://dev.squarelink.com).
 
 ## Registering Tokens
-<aside class="warning">Please register your DApp in the Developer Console if you haven't done so already</aside>
+<aside class="warning">Please register your DApp in the Developer Console if you haven't done so already.</aside>
 
 To register a token, simply navigate to the "Sign Tx" page of your app or DApp in the [Developer Console](https://dev.squarelink.com).
 
 We require the following info about the token you'll be using:
 
-- **Currency:** Ethereum, Bitcoin, Litecoin, or a custom ERC-20 Token (i.e. OmiseGo)
+- **Currency:** Ethereum, Bitcoin, Litecoin, or a custom ERC-20 Token (i.e. OmiseGo).
 
 - **Whitelisted Deposit Addresses (Optional):** Valid recipient addresses. _**Leave blank for any**_. For ERC-20 tokens, the deposit address is similarly the recipient of the token, not the contract address.
 
-- **Contract Address**: _**This must currently be an Etherscan-verified smart contract**_. Use it to specify an ERC-20 contract address or a general purpose smart contract on the Ethereum blockchain. ([*Verify your contract on Etherscan*](https://etherscan.io/verifyContract2))
+- **Contract Address**: _**This must currently be an Etherscan-verified smart contract**_. Use it to specify an ERC-20 contract address or a general purpose smart contract on the Ethereum blockchain. ([*Verify your contract on Etherscan*](https://etherscan.io/verifyContract2)).
 
 After you've created the token, you can navigate to the token settings in the Developer Console and use the following optional settings:
 
 ### Optional Settings:
 
-- **Confirmation Policy:** - How quickly you'd like us to consider a transaction confirmed on the blockchain. Once the transaction is confirmed, we'll send a callback to a url you've specified. Default is medium. Use slow for high-value transactions.
+- **Confirmation Policy:** How quickly you'd like us to consider a transaction confirmed on the blockchain. Once the transaction is confirmed, we'll send a callback to a URL you've specified. Default is medium. Use slow for high-value transactions.
 
-- **Webhooks Callback URL** - We'll send a POST request with info about a transaction to this address once it's confirmed. [Read More about Callbacks](#using-callbacks)
+- **Webhooks Callback URL:** We'll send a POST request with info about a transaction to this address once it's confirmed. [Read More about Callbacks](#using-callbacks).
 
-- **On Failure Redirect:** - If there is an error sending the transaction or an issue with your request, we'll redirect the user here with a description of the error. For instance, `http://localhost:8080/failure?error=recipient%20is%20not%20whitelisted`
+- **On Failure Redirect:** If there is an error sending the transaction or an issue with your request, we'll redirect the user here with a description of the error. For instance, `http://localhost:8080/failure?error=recipient%20is%20not%20whitelisted`.
 
-- **On Success Redirect** - When the transaction is successful, we'll redirect the user here with the transaction id and a state if provided. For instance, `http://localhost:8080/success?tx_id=abcdef12345&state=xxxxxxx`
+- **On Success Redirect:** When the transaction is successful, we'll redirect the user here with the transaction id and a state if provided. For instance, `http://localhost:8080/success?tx_id=abcdef12345&state=xxxxxxx`.
 
 ## Sign Tx Button
 
 Once you've registered your token, you can navigate to your registered token's home page in the Developer Console and click on "Integration Code" to see the HTML button for integrating Sign Tx into your DApp.
 
-On the page for the new token created, you'll see a `token_id` - you'll need to pass it as a parameter in any transaction requests. It acts similarly to your `client_id` and allows us to check against any whitelisted addresses you may have. 
+On the page for the new token created, you'll see a `token_id` - you'll need to pass it as a parameter in any transaction requests. It acts similarly to your `client_id` and allows us to check against any whitelisted addresses you may have.
 
-Depending on the currency and the features you require, there are several optional parameters you can use in your request URL. See Below.
+Depending on the currency and the features you require, there are several optional parameters you can use in your request URL. See Below:
 
 ### Ethereum
 
@@ -60,11 +60,11 @@ Depending on the currency and the features you require, there are several option
 
 Parameter | Required | Description
 --------- | ------- | -----------
-`token_id` | **true** | This is the `token_id` found on your registered token's home page in the Developer Console
+`token_id` | **true** | This is the `token_id` found on your registered token's home page in the Developer Console.
 `to` | **true** | An Ethereum address to receive the transaction. Must be whitelisted if you set up your token with whitelisted addresses.
-`amount` | **true** | Integer amount to be transferred. **Smallest divisible amount of ETH**. For instance, "1000" = 10e-15 ETH
+`amount` | **true** | Integer amount to be transferred. **Smallest divisible amount of ETH**. For instance, "1000" = 10e-15 ETH.
 `gas` | *(Optional)* | Optional gas limit for transaction. If omitted, we'll estimate it for you.
-`description` | *(Optional)* | Description shown to the user in the request
+`description` | *(Optional)* | Description shown to the user in the request.
 `state` | *(Optional)* | An optional CSRF token to be returned to your `on_success` redirect. Will also be returned in a callback if you've set up callbacks.
 
 
@@ -124,9 +124,12 @@ Parameter | Required | Description
 
 - **`method`:** transfer
 
-- **`params`:** [0xed19abdc33e91c809376b742d48ed1d935d4faee,20000000000000000000]
+- **`params`:** [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0xed19abdc33e91c809376b742d48ed1d935d4faee,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20000000000000000000<br>
+		]
 
-*Where EXAMPLE tokens have 18 decimal places*
+*Where EXAMPLE tokens have 18 decimal places*.
 
 
 For the protection of Squarelink users, we require that your contract is verified on Etherscan so we can access the ABI directly, but it's a simple process - [*verify your contract here*](https://etherscan.io/verifyContract2). We plan to build support for contract source uploads in the Developer Console so you can verify it directly with Squarelink.
@@ -140,7 +143,7 @@ For the protection of Squarelink users, we require that your contract is verifie
 ```shell
 POST https://your-site.com/callback-url -d
 {
-  "id": "0x61474003e56d67aba6bf148c5ec361e3a3c1ceea37fe3ace7d87759b399292f9"
+  "id": "0x61474003e56d67aba6bf148c5ec361e3a3c1ceea37fe3ace7d87759b399292f9",
   "sub": "u12345abcdef",
   "currency": "ETH",
   "status": "confirmed",
@@ -169,7 +172,7 @@ POST https://your-site.com/callback-url -d
 
 Callbacks allow us to send you updates about your users' transactions. This requires that you've set the Webhooks Callback URL in your registered token's settings in the Developer Console.
 
-The data returned in the callback complies with our [**Transaction Model**](#transaction-object) as defined in the [API Reference](#api-reference)
+The data returned in the callback complies with our [**Transaction Model**](#transaction-object) as defined in the [API Reference](#api-reference).
 
 Based on the Confirmation Policy you've set, we'll send a POST request to the specified Callback URL with information about a transaction once it's confirmed.
 
@@ -179,7 +182,7 @@ We will make 5 attempted callbacks, each 10 seconds apart, before we discard a c
 
 ## Live Examples
 
-<aside class="notice">All examples are implemented using Squarelink's internally Registered App and Tokens</aside>
+<aside class="notice">All examples are implemented using Squarelink's internally Registered App and Tokens.</aside>
 
 > HTML for Ethereum example
 

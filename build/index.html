@@ -311,7 +311,7 @@
 <p>Squarelink is the first access tool for blockchain apps and services that enables users to securely recover lost private keys.
 We&#39;ll walk you through integrating Squarelink into your app or DApp so your users can seamlessly interact with the blockchain.</p>
 
-<p>We offer standard OAuth 2.0 &quot;Sign In&quot; integrations along with a REST API for interacting with Squarelink user accounts as well as &quot;Sign Tx&quot; integrations to easily request transactions from a user.</p>
+<p>We offer standard OAuth 2.0 &quot;Sign In&quot; integrations along with a REST API for interacting with Squarelink user accounts. We also provide &quot;Sign Tx&quot; integrations to easily request transactions from a user.</p>
 
 <aside class="warning">BETA DISCLAIMER</aside>
 
@@ -319,7 +319,7 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 
 <p>Squarelink is a community tool currently offered for free, without warranty.</p>
 
-<p>If you&#39;d like to request features or contribute to the community, please see <a href="#community">Community</a> </p>
+<p>If you&#39;d like to request features or contribute to the community, please see <a href="#community">Community</a></p>
 
 <p>For any API-related issues or custom needs, please email <a href="mailto:support@squarelink.com">support@squarelink.com</a></p>
 <h2 id='getting-started'>Getting Started</h2>
@@ -329,16 +329,16 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 <h1 id='sign-in-integration'>Sign In Integration</h1>
 <p>With the Squarelink Sign In button, you can authenticate your users and access info about their Squarelink accounts in minutes.</p>
 
-<p>Want to see it in action? <strong>Check out this <a href="https://squarelink-inc.github.io/Sign-In-Example">example application</a></strong></p>
+<p>Want to see it in action? <strong>Check out this <a href="https://squarelink-inc.github.io/Sign-In-Example">example application</a></strong>.</p>
 
-<p>If you have not done so already, please <a href="#getting-started">register your app or DApp</a> in the <a href="https://dev.squarelink.com">Squarelink Developer Console</a></p>
+<p>If you have not done so already, please <a href="#getting-started">register your app or DApp</a> in the <a href="https://dev.squarelink.com">Squarelink Developer Console</a>.</p>
 <h2 id='set-up-your-app'>Set Up Your App</h2>
-<p>Once you&#39;ve registered your application, you can head to your application&#39;s home page in the <a href="https://dev.squarelink.com">Developer Console</a> and click on &quot;Sign In&quot;. We&#39;ll prompt you to add some application-specific information as follows:</p>
+<p>Once you&#39;ve registered your application, you can head to your application&#39;s home page in the <a href="https://dev.squarelink.com">Developer Console</a> and click on &quot;Sign In.&quot; We&#39;ll prompt you to add some application-specific information as follows:</p>
 
 <ul>
-<li><strong>App Type:</strong> what kind of application are you building?</li>
-<li><strong>Redirect URI Whitelist:</strong> a list of URLs that we are allowed to redirect back to after a user authorizes your app. <strong>Leave blank to use any URL</strong></li>
-<li><strong>Website:</strong> your applications website</li>
+<li><strong>App Type:</strong> What kind of application are you building?</li>
+<li><strong>Redirect URI Whitelist:</strong> A list of URLs that we are allowed to redirect back to after a user authorizes your app. <strong>Leave blank to use any URL</strong>.</li>
+<li><strong>Website:</strong> Your applications website.</li>
 </ul>
 
 <p>After you&#39;ve set up your app or DApp for OAuth, you can simply copy and paste the auto-generated button code.</p>
@@ -369,17 +369,17 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 <tr>
 <td><code>client_id</code></td>
 <td><strong>true</strong></td>
-<td>This is the <code>client_id</code> found on your App&#39;s home page in the Developer Console</td>
+<td>This is the <code>client_id</code> found on your app&#39;s home page in the Developer Console.</td>
 </tr>
 <tr>
 <td><code>scope</code></td>
 <td><strong>true</strong></td>
-<td>This is a comma-separated list of permissions you&#39;d like to request from a user. (See available scopes below)</td>
+<td>This is a comma-separated list of permissions you&#39;d like to request from a user. (See available scopes below).</td>
 </tr>
 <tr>
 <td><code>redirect_uri</code></td>
 <td><strong>true</strong></td>
-<td>This is the url you&#39;d like us to send the user back to after the user has authorized your app. <strong>Make sure it is whitelisted in your app&#39;s Sign In settings</strong></td>
+<td>This is the URL you&#39;d like us to send the user back to after the user has authorized your app. <strong>Make sure it is whitelisted in your app&#39;s Sign In settings</strong>.</td>
 </tr>
 <tr>
 <td><code>state</code></td>
@@ -403,21 +403,21 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 </thead><tbody>
 <tr>
 <td><code>state</code></td>
-<td>Returned if you passed it in the request</td>
+<td>Returned if you passed it in the request.</td>
 </tr>
 <tr>
 <td><code>access_token</code></td>
-<td>An access token <em>if you specified the <code>token</code> response_type</em></td>
+<td>An access token <em>if you specified the <code>token</code> response_type</em>.</td>
 </tr>
 <tr>
 <td><code>code</code></td>
-<td>An authorization code to be used in the second step of the Authorization Code Grant <em>if you specified the <code>code</code> response_type</em></td>
+<td>An authorization code to be used in the second step of the Authorization Code Grant <em>if you specified the <code>code</code> response_type</em>.</td>
 </tr>
 </tbody></table>
 
-<p>A successfully authorized request will redirect back to your redirect URI such as <code>http://localhost:8080/your-redirect-uri?code=xxxxx&amp;state=xxxxx</code></p>
+<p>A successfully authorized request will redirect back to your redirect URI such as <code>http://localhost:8080/your-redirect-uri?code=xxxxx&amp;state=xxxxx</code>.</p>
 
-<p>If there is an issue with your request, we&#39;ll redirect back to your application with the <code>error</code> parameter. For instance, <code>http://localhost:8080/your-redirect-uri?error=description%20of%20the%20problem</code></p>
+<p>If there is an issue with your request, we&#39;ll redirect back to your application with the <code>error</code> parameter. For instance, <code>http://localhost:8080/your-redirect-uri?error=description%20of%20the%20problem</code>.</p>
 <h3 id='available-scopes'>Available Scopes</h3>
 <table><thead>
 <tr>
@@ -427,7 +427,7 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 </thead><tbody>
 <tr>
 <td><strong><code>user</code></strong></td>
-<td>This allows you to view user info such as email, given_name, and family_name</td>
+<td>This allows you to view user info such as email, given_name, and family_name.</td>
 </tr>
 <tr>
 <td><strong><code>wallets:read</code></strong></td>
@@ -435,15 +435,15 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 </tr>
 <tr>
 <td><strong><code>wallets:read:eth</code></strong></td>
-<td>A reduced-scope version of <code>wallets:read</code> limited to Ethereum accounts</td>
+<td>A reduced-scope version of <code>wallets:read</code> limited to Ethereum accounts.</td>
 </tr>
 <tr>
 <td><strong><code>wallets:read:btc</code></strong></td>
-<td>A reduced-scope version of <code>wallets:read</code> limited to Bitcoin accounts</td>
+<td>A reduced-scope version of <code>wallets:read</code> limited to Bitcoin accounts.</td>
 </tr>
 <tr>
 <td><strong><code>wallets:read:ltc</code></strong></td>
-<td>A reduced-scope version of <code>wallets:read</code> limited to Litecoin accounts</td>
+<td>A reduced-scope version of <code>wallets:read</code> limited to Litecoin accounts.</td>
 </tr>
 </tbody></table>
 <h2 id='obtain-an-access-token'>Obtain an Access Token</h2>
@@ -462,7 +462,7 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="o">{</span>
   <span class="s2">"success"</span>: <span class="nb">true</span>,
-  <span class="s2">"token_type"</span>: <span class="s1">'Bearer'</span>,
+  <span class="s2">"token_type"</span>: <span class="s2">"Bearer"</span>,
   <span class="s2">"expires"</span>: 24802104,
   <span class="s2">"access_token"</span>: <span class="s2">"xxx.xxxxxx.xxx"</span>,
   <span class="s2">"refresh_token"</span>: <span class="s2">"xxxx"</span>
@@ -478,8 +478,8 @@ We&#39;ll walk you through integrating Squarelink into your app or DApp so your 
 
 <p>You can now exchange <code>code</code> (and <code>state</code> if used) for an access token using Squarelink&#39;s OAuth API.</p>
 
-<aside class="success">Now you're ready to use the Squarelink API]. Use the resulting access token in all requests</aside>
-<h3 id='request-endpoint-https-oauth-squarelink-com-token'><em><strong>Request Endpoint:</strong></em> <em><a href="#">https://oauth.squarelink.com/token</a></em></h3><h3 id='request-parameters'>Request Parameters</h3>
+<aside class="success">Now you're ready to use the Squarelink API. Use the resulting access token in all requests</aside>
+<h3 id='request-endpoint-https-oauth-squarelink-com-token'><em><strong>Request Endpoint:</strong></em> <em><a href="https://oauth.squarelink.com/token">https://oauth.squarelink.com/token</a></em></h3><h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -566,7 +566,7 @@ app in the Developer Console</aside>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="o">{</span>
   <span class="s2">"success"</span>: <span class="nb">true</span>,
-  <span class="s2">"token_type"</span>: <span class="s1">'Bearer'</span>,
+  <span class="s2">"token_type"</span>: <span class="s2">"Bearer"</span>,
   <span class="s2">"expires"</span>: 24802104,
   <span class="s2">"access_token"</span>: <span class="s2">"xxx.xxxxxx.xxx"</span>,
   <span class="s2">"refresh_token"</span>: <span class="s2">"xxxx"</span>
@@ -575,7 +575,7 @@ app in the Developer Console</aside>
 <p>If you used the Authorization Code Grant method to get authorization from a user, you can refresh the resulting access token to prevent expiry. To do so, you must store the <code>refresh_token</code> received in the original response.</p>
 
 <p>You may specify a new reduced scope as well. This new scope must be limited to scopes authorized in the initial authorization. For instance, if you were initially authorized for only <code>wallets:read:eth</code>, you cannot request <code>wallets:read</code>.</p>
-<h3 id='request-endpoint-https-oauth-squarelink-com-token-2'><em><strong>Request Endpoint:</strong></em> <em><a href="#">https://oauth.squarelink.com/token</a></em></h3><h3 id='request-parameters-2'>Request Parameters</h3>
+<h3 id='request-endpoint-https-oauth-squarelink-com-token-2'><em><strong>Request Endpoint:</strong></em> <em><a href="https://oauth.squarelink.com/token">https://oauth.squarelink.com/token</a></em></h3><h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -650,34 +650,34 @@ app in the Developer Console</aside>
 
 <p>Squarelink&#39;s &quot;Sign Tx&quot; button allows DApps to request Ethereum, Bitcoin, Litecoin, or other Ethereum-based tokens (i.e. ERC-20s) from Squarelink users.</p>
 
-<p>To get started, you&#39;ll need to register one of these tokens or smart contracts with your DApp in the <a href="https://dev.squarelink.com">Developer Console</a></p>
+<p>To get started, you&#39;ll need to register one of these tokens or smart contracts with your DApp in the <a href="https://dev.squarelink.com">Developer Console</a>.</p>
 <h2 id='registering-tokens'>Registering Tokens</h2>
-<aside class="warning">Please register your DApp in the Developer Console if you haven't done so already</aside>
+<aside class="warning">Please register your DApp in the Developer Console if you haven't done so already.</aside>
 
 <p>To register a token, simply navigate to the &quot;Sign Tx&quot; page of your app or DApp in the <a href="https://dev.squarelink.com">Developer Console</a>.</p>
 
 <p>We require the following info about the token you&#39;ll be using:</p>
 
 <ul>
-<li><p><strong>Currency:</strong> Ethereum, Bitcoin, Litecoin, or a custom ERC-20 Token (i.e. OmiseGo)</p></li>
+<li><p><strong>Currency:</strong> Ethereum, Bitcoin, Litecoin, or a custom ERC-20 Token (i.e. OmiseGo).</p></li>
 <li><p><strong>Whitelisted Deposit Addresses (Optional):</strong> Valid recipient addresses. <em><strong>Leave blank for any</strong></em>. For ERC-20 tokens, the deposit address is similarly the recipient of the token, not the contract address.</p></li>
-<li><p><strong>Contract Address</strong>: <em><strong>This must currently be an Etherscan-verified smart contract</strong></em>. Use it to specify an ERC-20 contract address or a general purpose smart contract on the Ethereum blockchain. (<a href="https://etherscan.io/verifyContract2"><em>Verify your contract on Etherscan</em></a>)</p></li>
+<li><p><strong>Contract Address</strong>: <em><strong>This must currently be an Etherscan-verified smart contract</strong></em>. Use it to specify an ERC-20 contract address or a general purpose smart contract on the Ethereum blockchain. (<a href="https://etherscan.io/verifyContract2"><em>Verify your contract on Etherscan</em></a>).</p></li>
 </ul>
 
 <p>After you&#39;ve created the token, you can navigate to the token settings in the Developer Console and use the following optional settings:</p>
 <h3 id='optional-settings'>Optional Settings:</h3>
 <ul>
-<li><p><strong>Confirmation Policy:</strong> - How quickly you&#39;d like us to consider a transaction confirmed on the blockchain. Once the transaction is confirmed, we&#39;ll send a callback to a url you&#39;ve specified. Default is medium. Use slow for high-value transactions.</p></li>
-<li><p><strong>Webhooks Callback URL</strong> - We&#39;ll send a POST request with info about a transaction to this address once it&#39;s confirmed. <a href="#using-callbacks">Read More about Callbacks</a></p></li>
-<li><p><strong>On Failure Redirect:</strong> - If there is an error sending the transaction or an issue with your request, we&#39;ll redirect the user here with a description of the error. For instance, <code>http://localhost:8080/failure?error=recipient%20is%20not%20whitelisted</code></p></li>
-<li><p><strong>On Success Redirect</strong> - When the transaction is successful, we&#39;ll redirect the user here with the transaction id and a state if provided. For instance, <code>http://localhost:8080/success?tx_id=abcdef12345&amp;state=xxxxxxx</code></p></li>
+<li><p><strong>Confirmation Policy:</strong> How quickly you&#39;d like us to consider a transaction confirmed on the blockchain. Once the transaction is confirmed, we&#39;ll send a callback to a URL you&#39;ve specified. Default is medium. Use slow for high-value transactions.</p></li>
+<li><p><strong>Webhooks Callback URL:</strong> We&#39;ll send a POST request with info about a transaction to this address once it&#39;s confirmed. <a href="#using-callbacks">Read More about Callbacks</a>.</p></li>
+<li><p><strong>On Failure Redirect:</strong> If there is an error sending the transaction or an issue with your request, we&#39;ll redirect the user here with a description of the error. For instance, <code>http://localhost:8080/failure?error=recipient%20is%20not%20whitelisted</code>.</p></li>
+<li><p><strong>On Success Redirect:</strong> When the transaction is successful, we&#39;ll redirect the user here with the transaction id and a state if provided. For instance, <code>http://localhost:8080/success?tx_id=abcdef12345&amp;state=xxxxxxx</code>.</p></li>
 </ul>
 <h2 id='sign-tx-button'>Sign Tx Button</h2>
 <p>Once you&#39;ve registered your token, you can navigate to your registered token&#39;s home page in the Developer Console and click on &quot;Integration Code&quot; to see the HTML button for integrating Sign Tx into your DApp.</p>
 
-<p>On the page for the new token created, you&#39;ll see a <code>token_id</code> - you&#39;ll need to pass it as a parameter in any transaction requests. It acts similarly to your <code>client_id</code> and allows us to check against any whitelisted addresses you may have. </p>
+<p>On the page for the new token created, you&#39;ll see a <code>token_id</code> - you&#39;ll need to pass it as a parameter in any transaction requests. It acts similarly to your <code>client_id</code> and allows us to check against any whitelisted addresses you may have.</p>
 
-<p>Depending on the currency and the features you require, there are several optional parameters you can use in your request URL. See Below.</p>
+<p>Depending on the currency and the features you require, there are several optional parameters you can use in your request URL. See Below:</p>
 <h3 id='ethereum'>Ethereum</h3>
 <blockquote>
 <p>This is an example of an Ethereum request</p>
@@ -702,7 +702,7 @@ app in the Developer Console</aside>
 <tr>
 <td><code>token_id</code></td>
 <td><strong>true</strong></td>
-<td>This is the <code>token_id</code> found on your registered token&#39;s home page in the Developer Console</td>
+<td>This is the <code>token_id</code> found on your registered token&#39;s home page in the Developer Console.</td>
 </tr>
 <tr>
 <td><code>to</code></td>
@@ -712,7 +712,7 @@ app in the Developer Console</aside>
 <tr>
 <td><code>amount</code></td>
 <td><strong>true</strong></td>
-<td>Integer amount to be transferred. <strong>Smallest divisible amount of ETH</strong>. For instance, &quot;1000&quot; = 10e-15 ETH</td>
+<td>Integer amount to be transferred. <strong>Smallest divisible amount of ETH</strong>. For instance, &quot;1000&quot; = 10e-15 ETH.</td>
 </tr>
 <tr>
 <td><code>gas</code></td>
@@ -722,7 +722,7 @@ app in the Developer Console</aside>
 <tr>
 <td><code>description</code></td>
 <td><em>(Optional)</em></td>
-<td>Description shown to the user in the request</td>
+<td>Description shown to the user in the request.</td>
 </tr>
 <tr>
 <td><code>state</code></td>
@@ -843,10 +843,13 @@ app in the Developer Console</aside>
 
 <ul>
 <li><p><strong><code>method</code>:</strong> transfer</p></li>
-<li><p><strong><code>params</code>:</strong> [0xed19abdc33e91c809376b742d48ed1d935d4faee,20000000000000000000]</p></li>
+<li><p><strong><code>params</code>:</strong> [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0xed19abdc33e91c809376b742d48ed1d935d4faee,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20000000000000000000<br>
+    ]</p></li>
 </ul>
 
-<p><em>Where EXAMPLE tokens have 18 decimal places</em></p>
+<p><em>Where EXAMPLE tokens have 18 decimal places</em>.</p>
 
 <p>For the protection of Squarelink users, we require that your contract is verified on Etherscan so we can access the ABI directly, but it&#39;s a simple process - <a href="https://etherscan.io/verifyContract2"><em>verify your contract here</em></a>. We plan to build support for contract source uploads in the Developer Console so you can verify it directly with Squarelink.</p>
 <h2 id='using-callbacks'>Using Callbacks</h2>
@@ -855,7 +858,7 @@ app in the Developer Console</aside>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>POST https://your-site.com/callback-url -d
 <span class="o">{</span>
-  <span class="s2">"id"</span>: <span class="s2">"0x61474003e56d67aba6bf148c5ec361e3a3c1ceea37fe3ace7d87759b399292f9"</span>
+  <span class="s2">"id"</span>: <span class="s2">"0x61474003e56d67aba6bf148c5ec361e3a3c1ceea37fe3ace7d87759b399292f9"</span>,
   <span class="s2">"sub"</span>: <span class="s2">"u12345abcdef"</span>,
   <span class="s2">"currency"</span>: <span class="s2">"ETH"</span>,
   <span class="s2">"status"</span>: <span class="s2">"confirmed"</span>,
@@ -883,7 +886,7 @@ app in the Developer Console</aside>
 </code></pre>
 <p>Callbacks allow us to send you updates about your users&#39; transactions. This requires that you&#39;ve set the Webhooks Callback URL in your registered token&#39;s settings in the Developer Console.</p>
 
-<p>The data returned in the callback complies with our <a href="#transaction-object"><strong>Transaction Model</strong></a> as defined in the <a href="#api-reference">API Reference</a></p>
+<p>The data returned in the callback complies with our <a href="#transaction-object"><strong>Transaction Model</strong></a> as defined in the <a href="#api-reference">API Reference</a>.</p>
 
 <p>Based on the Confirmation Policy you&#39;ve set, we&#39;ll send a POST request to the specified Callback URL with information about a transaction once it&#39;s confirmed.</p>
 
@@ -891,7 +894,7 @@ app in the Developer Console</aside>
 
 <aside class="warning">Note: We do not allow any loopback URLs such as `localhost`, `127.0.0.1`, etc.</aside>
 <h2 id='live-examples'>Live Examples</h2>
-<aside class="notice">All examples are implemented using Squarelink's internally Registered App and Tokens</aside>
+<aside class="notice">All examples are implemented using Squarelink's internally Registered App and Tokens.</aside>
 
 <blockquote>
 <p>HTML for Ethereum example</p>
@@ -962,9 +965,9 @@ app in the Developer Console</aside>
 
 <p>For any of the following API Routes, we expect that you have <a href="#obtain-an-access-token">obtained an access token</a> for your user&#39;s Squarelink account.</p>
 
-<p><em><strong>API Endpoint:</strong></em> <em><a href="#">https://api.squarelink.com</a></em></p>
+<p><em><strong>API Endpoint:</strong></em> <em><a href="https://api.squarelink.com">https://api.squarelink.com</a></em></p>
 
-<aside class="notice">All routes are currently GET requests exclusively for viewing user's account info</aside>
+<aside class="notice">All routes are currently GET requests exclusively for viewing user's account info.</aside>
 <h2 id='user-info'>User Info</h2><h3 id='get-user'>GET /user</h3>
 <blockquote>
 <p>GET /user request example</p>
@@ -983,9 +986,9 @@ app in the Developer Console</aside>
   <span class="s2">"created"</span>: 114012480
 <span class="o">}</span>
 </code></pre>
-<aside class="notice">You must be authorized for the <i>user</i> scope to access this route</aside>
+<aside class="notice">You must be authorized for the <i>user</i> scope to access this route.</aside>
 
-<p>Read a user&#39;s Squarelink Account info such as their email, family name, and given name with this route</p>
+<p>Read a user&#39;s Squarelink Account info such as their email, family name, and given name with this route:</p>
 <h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -1102,9 +1105,9 @@ app in the Developer Console</aside>
   <span class="o">]</span>  
 <span class="o">}</span>
 </code></pre>
-<aside class="notice">All balances are passed in the smallest non-divisible value the respective currency supports</aside>
+<aside class="notice">All balances are passed in the smallest non-divisible value the respective currency supports.</aside>
 <h3 id='get-wallets'>GET /wallets</h3>
-<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope</aside>
+<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope.</aside>
 
 <p>Get a list of a Squarelink user&#39;s wallets and public information about those wallets. Optionally, if you&#39;re authorized with the <code>wallets:read</code> or <code>wallets:read:eth</code> scopes, you can request a list of active ERC-20 balances for the user as well.  </p>
 <h3 id='request-parameters-2'>Request Parameters</h3>
@@ -1244,7 +1247,7 @@ app in the Developer Console</aside>
 </tr>
 </tbody></table>
 <h2 id='transactions'>Transactions</h2>
-<aside class="notice">All token amounts are passed in the smallest non-divisible value the respective currency supports</aside>
+<aside class="notice">All token amounts are passed in the smallest non-divisible value the respective currency supports.</aside>
 <h3 id='get-txs'>GET /txs</h3>
 <blockquote>
 <p>GET /txs Example Request (txs for ETH, BTC, LTC, and an ERC-20 token)</p>
@@ -1345,9 +1348,9 @@ app in the Developer Console</aside>
   <span class="o">]</span>
 <span class="o">}</span>
 </code></pre>
-<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope</aside>
+<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope.</aside>
 
-<p>You can use this route to list a Squarelink user&#39;s transactions by currency, including specific ERC-20 token transactions or <em>all</em> ERC-20 token transactions. <em>Note:</em> all transaction requests are paginated.</p>
+<p>You can use this route to list a Squarelink user&#39;s transactions by currency, including specific ERC-20 token transactions or <em>all</em> ERC-20 token transactions. <em>Note:</em> All transaction requests are paginated.</p>
 <h3 id='request-parameters-3'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -1422,7 +1425,7 @@ app in the Developer Console</aside>
 </tr>
 </tbody></table>
 <h3 id='transaction-object'>Transaction Object</h3>
-<aside class="warning">The transaction model and routes are currently experimental. If you require additional information about a transaction, we recommend using a dedicated Blockchain explorer API</aside>
+<aside class="warning">The transaction model and routes are currently experimental. If you require additional information about a transaction, we recommend using a dedicated Blockchain explorer API.</aside>
 
 <p>Our transaction object has a large number of parameters which allows us to ubiquitously collect transactions across multiple blockchains. Please note the fields that are specific to certain blockchains and types of transactions.</p>
 
@@ -1491,7 +1494,7 @@ app in the Developer Console</aside>
 <tr>
 <td><strong><code>status</code></strong></td>
 <td><strong>String</strong></td>
-<td>&quot;confirmed&quot;, &quot;pending&quot;, or &quot;failed&quot;</td>
+<td><code>confirmed</code>, <code>pending</code>, or <code>failed</code></td>
 </tr>
 <tr>
 <td><strong><code>block_hash</code></strong></td>
@@ -1571,5 +1574,15 @@ app in the Developer Console</aside>
       <div class="dark-box">
       </div>
     </div>
+    <script>
+      var links = document.links;
+
+      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+        console.log(links);
+        if (links[i].hostname != window.location.hostname && links[i].protocol != 'mailto:') {
+          links[i].target = '_blank';
+        }
+      }
+    </script>
   </body>
 </html>

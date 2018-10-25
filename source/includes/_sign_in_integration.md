@@ -3,17 +3,17 @@
 
 With the Squarelink Sign In button, you can authenticate your users and access info about their Squarelink accounts in minutes.
 
-Want to see it in action? **Check out this [example application](https://squarelink-inc.github.io/Sign-In-Example)**
+Want to see it in action? **Check out this [example application](https://squarelink-inc.github.io/Sign-In-Example)**.
 
-If you have not done so already, please [register your app or DApp](#getting-started) in the [Squarelink Developer Console](https://dev.squarelink.com)
+If you have not done so already, please [register your app or DApp](#getting-started) in the [Squarelink Developer Console](https://dev.squarelink.com).
 
 ## Set Up Your App
 
-Once you've registered your application, you can head to your application's home page in the [Developer Console](https://dev.squarelink.com) and click on "Sign In". We'll prompt you to add some application-specific information as follows:
+Once you've registered your application, you can head to your application's home page in the [Developer Console](https://dev.squarelink.com) and click on "Sign In." We'll prompt you to add some application-specific information as follows:
 
-- **App Type:** what kind of application are you building?
-- **Redirect URI Whitelist:** a list of URLs that we are allowed to redirect back to after a user authorizes your app. **Leave blank to use any URL**
-- **Website:** your applications website
+- **App Type:** What kind of application are you building?
+- **Redirect URI Whitelist:** A list of URLs that we are allowed to redirect back to after a user authorizes your app. **Leave blank to use any URL**.
+- **Website:** Your applications website.
 
 After you've set up your app or DApp for OAuth, you can simply copy and paste the auto-generated button code.
 
@@ -37,9 +37,9 @@ The Sign In button should redirect the user to Squarelink's Authorization Page w
 
 Parameter | Required | Description
 --------- | ------- | -----------
-`client_id` | **true** | This is the `client_id` found on your App's home page in the Developer Console
-`scope` | **true** | This is a comma-separated list of permissions you'd like to request from a user. (See available scopes below)
-`redirect_uri` | **true** | This is the url you'd like us to send the user back to after the user has authorized your app. **Make sure it is whitelisted in your app's Sign In settings**
+`client_id` | **true** | This is the `client_id` found on your app's home page in the Developer Console.
+`scope` | **true** | This is a comma-separated list of permissions you'd like to request from a user. (See available scopes below).
+`redirect_uri` | **true** | This is the URL you'd like us to send the user back to after the user has authorized your app. **Make sure it is whitelisted in your app's Sign In settings**.
 `state` | *false* | This can be any valid CSRF token (randomly generated). We'll return it to you as a URL parameter in the redirect to your application.
 response_type | **true** | Specifies the OAuth 2.0 grant type. Set to "**code**" to use the **[Authorization Code Grant](https://oauth.net/2/grant-types/authorization-code/)**. Set to "**token**" to use the **[Implicit Grant](https://oauth.net/2/grant-types/implicit/)**. Read [Obtain an Access Token](#obtain-an-access-token) for more info.
 
@@ -47,22 +47,22 @@ Once a user has authorized your app or DApp, we'll redirect the user to the redi
 
 Parameter | Description
 --------- | -----------
-`state` | Returned if you passed it in the request
-`access_token` | An access token *if you specified the `token` response_type*
-`code` | An authorization code to be used in the second step of the Authorization Code Grant *if you specified the `code` response_type*
+`state` | Returned if you passed it in the request.
+`access_token` | An access token *if you specified the `token` response_type*.
+`code` | An authorization code to be used in the second step of the Authorization Code Grant *if you specified the `code` response_type*.
 
-A successfully authorized request will redirect back to your redirect URI such as `http://localhost:8080/your-redirect-uri?code=xxxxx&state=xxxxx`
+A successfully authorized request will redirect back to your redirect URI such as `http://localhost:8080/your-redirect-uri?code=xxxxx&state=xxxxx`.
 
-If there is an issue with your request, we'll redirect back to your application with the `error` parameter. For instance, `http://localhost:8080/your-redirect-uri?error=description%20of%20the%20problem`
+If there is an issue with your request, we'll redirect back to your application with the `error` parameter. For instance, `http://localhost:8080/your-redirect-uri?error=description%20of%20the%20problem`.
 
 ### Available Scopes
 Parameter | Description
 --------- | -----------
-**`user`** | This allows you to view user info such as email, given_name, and family_name
+**`user`** | This allows you to view user info such as email, given_name, and family_name.
 **`wallets:read`** | This allows you to read info such as transactions and addresses for all of a user's blockchain accounts.
-**`wallets:read:eth`** | A reduced-scope version of `wallets:read` limited to Ethereum accounts
-**`wallets:read:btc`** | A reduced-scope version of `wallets:read` limited to Bitcoin accounts
-**`wallets:read:ltc`** | A reduced-scope version of `wallets:read` limited to Litecoin accounts
+**`wallets:read:eth`** | A reduced-scope version of `wallets:read` limited to Ethereum accounts.
+**`wallets:read:btc`** | A reduced-scope version of `wallets:read` limited to Bitcoin accounts.
+**`wallets:read:ltc`** | A reduced-scope version of `wallets:read` limited to Litecoin accounts.
 
 ## Obtain an Access Token
 
@@ -82,7 +82,7 @@ GET https://oauth.squarelink.com/token?
 ```shell
 {
   "success": true,
-  "token_type": 'Bearer',
+  "token_type": "Bearer",
   "expires": 24802104,
   "access_token": "xxx.xxxxxx.xxx",
   "refresh_token": "xxxx"
@@ -99,9 +99,9 @@ We will redirect to your application with a URL parameter called `code` as well 
 
 You can now exchange `code` (and `state` if used) for an access token using Squarelink's OAuth API.
 
-<aside class="success">Now you're ready to use the Squarelink API]. Use the resulting access token in all requests</aside>
+<aside class="success">Now you're ready to use the Squarelink API. Use the resulting access token in all requests</aside>
 
-### _**Request Endpoint:**_ *[https://oauth.squarelink.com/token]()*
+### _**Request Endpoint:**_ *[https://oauth.squarelink.com/token](https://oauth.squarelink.com/token)*
 
 ### Request Parameters
 Parameter | Required | Description
@@ -143,7 +143,7 @@ GET https://oauth.squarelink.com/token?
 ```shell
 {
   "success": true,
-  "token_type": 'Bearer',
+  "token_type": "Bearer",
   "expires": 24802104,
   "access_token": "xxx.xxxxxx.xxx",
   "refresh_token": "xxxx"
@@ -154,7 +154,7 @@ If you used the Authorization Code Grant method to get authorization from a user
 
 You may specify a new reduced scope as well. This new scope must be limited to scopes authorized in the initial authorization. For instance, if you were initially authorized for only `wallets:read:eth`, you cannot request `wallets:read`.
 
-### _**Request Endpoint:**_ *[https://oauth.squarelink.com/token]()*
+### _**Request Endpoint:**_ *[https://oauth.squarelink.com/token](https://oauth.squarelink.com/token)*
 
 ### Request Parameters
 Parameter | Required | Description
