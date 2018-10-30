@@ -110,7 +110,7 @@ Parameter | Required | Description
 **`client_id`** | **true** | Your application's `client_id` found in the Developer Console
 **`client_secret`** | **true** | Your application's `client_secret` found in the Developer Console
 **`code`** | **true** | The authorization code returned to your application in the redirect
-**`state`** | *If provided in authorization request* | A reduced-scope version of `wallets:read` limited to Litecoin accounts
+**`state`** | A randomly generated CSRF token that will be returned in the authorization response
 
 ### Response Body
 Parameter | Type | Description
