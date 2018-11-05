@@ -82,7 +82,6 @@ GET https://api.squarelink.com/wallets?
       "decimals": 8,
       "name": "Litecoin",
       "address": "LLTpMYh8iFDrCdWvhQTwUa1vLNEq4hGbTv",
-      "testnet": "mmnwrGcPTvfeF4BeX9eZuoZYs4FMVPqNFH",
       "created_on": 1539049741,
       "balance": 39020091001
     },
@@ -93,7 +92,6 @@ GET https://api.squarelink.com/wallets?
       "decimals": 8,
       "name": "Bitcoin",
       "address": "1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s",
-      "testnet": "mvzD7yesRStzoSEagBAS1C1Cd38xwgDZ1Z",
       "created_on": 1539049741,
      }
   ],
@@ -147,7 +145,6 @@ Parameter | Type | Description
 **`decimals`** | **Integer** | Number of decimal places the currency uses (i.e. 18 for ETH) for its lowest non-divisible amounts
 **`name`** | **String** | The name of the currency (i.e. "Bitcoin")
 **`address`** | **String** | The public address of the wallet
-**`testnet`** | **String** | The testnet address of the wallet (if BTC or LTC)
 **`created_on`** | **Integer** | Date created on Squarelink (number of seconds since the Epoch)
 
 ### ERC-20 Object
