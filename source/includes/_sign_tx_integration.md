@@ -9,6 +9,8 @@ Squarelink's "Sign Tx" button allows DApps to request Ethereum, Bitcoin, Litecoi
 
 To get started, you'll need to register one of these tokens or smart contracts with your DApp in the [Developer Console](https://dev.squarelink.com).
 
+To see an example, check out this [walkthrough for integrating VeChain](https://www.youtube.com/watch?v=WEyjzILnOMw)
+
 ## Registering Tokens
 <aside class="warning">Please register your DApp in the Developer Console if you haven't done so already.</aside>
 
