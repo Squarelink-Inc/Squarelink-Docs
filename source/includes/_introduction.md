@@ -1,24 +1,24 @@
 # Introduction
 
-**Welcome, Squarelink Developer!**
+> Code Examples:
 
-Squarelink is the first access tool for blockchain apps and services that enables users to securely recover lost private keys.
-We'll walk you through integrating Squarelink into your app or DApp so your users can seamlessly interact with the blockchain.
+```shell
+$ echo "Hello, Squarelink Developer!"
+$ echo "Code examples will show up here throughout this guide."
+```
 
-We offer standard OAuth 2.0 "Sign In" integrations along with a REST API for interacting with Squarelink user accounts. We also provide "Sign Tx" integrations to easily request transactions from a user.
+### Welcome, Squarelink Developer!
 
-<aside class="warning">BETA DISCLAIMER</aside>
+Squarelink is the long awaited, non-custodial, alternative to MetaMask that enables users to interact with ÐApps from **any device or browser** with **just an email and password**.
 
-Squarelink and the Squarelink API are currently in beta. We will periodically add features, but we don't anticipate any breaking changes to our API. In the event breaking changes are introduced, Squarelink Developers will be notified via email in advance of the change.
+We'll walk you through integrating Squarelink into your app or ÐApp so your users can easily interact with the blockchain.
 
-Squarelink is a community tool currently offered for free, without warranty.
+For this, we offer the Web3-based **"Sign Tx"** tool that allows you to easily request transactions from a user. We also provide a standard OAuth 2.0 **"Sign In"** integrations along with a REST API for interacting with Squarelink user accounts.
 
-If you'd like to request features or contribute to the community, please see [Community](#community)
-
-For any API-related issues or custom needs, please email [support@squarelink.com](mailto:support@squarelink.com)
+<aside class="warning">Squarelink is currently in Beta. We will periodically add features, but we don't anticipate any breaking changes to our API.</aside>
 
 ## Getting Started
 
-Before integrating either Sign In or Sign Tx, you must first create an account in the [Squarelink Developer Console](https://dev.squarelink.com) and register your application.
+To start integrating either **Sign Tx** or **Sign In**, let's first create an account in our [Developer Console](https://dev.squarelink.com) and register your ÐApp.
 
-Once you register your first application, you'll receive a `client_id` and `client_secret`. Your `client_id` is a public value used to identify your application, but remember to keep your `client_secret` hidden - never insert it into a public application.
+![New App Image](images/new-app.png)

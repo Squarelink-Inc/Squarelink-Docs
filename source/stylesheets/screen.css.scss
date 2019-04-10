@@ -360,6 +360,16 @@ html, body {
     padding-left: $main-padding + 15px;
   }
 
+  a {
+    color: rgb(93, 104, 255);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .gp {
+    color: rgb(217, 220, 237);
+  }
+
   // the div is the tocify hidden div for placeholding stuff
   &>h1, &>h2, &>div {
     clear:both;
@@ -367,9 +377,9 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    font-size: 27px;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     border-top: 1px solid #ccc;
@@ -384,13 +394,12 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 19px;
-    margin-top: 4em;
+    font-size: 22px;
+    margin-top: 1em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    font-weight: 600;
     padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
+    padding-bottom: 0.6em;
   }
 
   // h2s right after h1s should bump right up
@@ -405,6 +414,12 @@ html, body {
     font-size: 15px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 1.5em;
   }
 
   h4, h5, h6 {
@@ -466,7 +481,11 @@ html, body {
   }
 
   img {
-    max-width: 100%;
+    display: block;
+    max-width: 75%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   code {
@@ -483,12 +502,17 @@ html, body {
   }
 
   aside {
+    //width: 90%;
+    border-radius: 6px 0 0 6px;
+    margin-left: 20px;
+    font-weight: 600;
     padding-top: 1em;
     padding-bottom: 1em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
     line-height: 1.6;
+    color: #fff;
 
     &.warning {
       background-color: $aside-warning-bg;
@@ -567,6 +591,7 @@ html, body {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
       color: #eee;
+      font-weight: 700;
     }
   }
 }

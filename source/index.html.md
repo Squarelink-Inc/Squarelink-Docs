@@ -5,14 +5,14 @@ title: Squarelink Docs
 #  - shell
 
 toc_footers:
-  - <a href='https://dev.squarelink.com'>Sign Up for Squarelink Developer</a>
+  - <a href='https://dev.squarelink.com'>Become a Developer</a>
   - <a href='mailto://support@squarelink.com'>support@squarelink.com</a>
   - <a href='https://github.com/Squarelink-Inc'>Squarelink Github</a>
 
 includes:
   - introduction
-  - sign_in_integration
   - sign_tx_integration
+  - sign_in_integration
   - api_reference
   - community
 

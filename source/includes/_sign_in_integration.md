@@ -1,49 +1,45 @@
 
-# Sign In Integration
+# **Sign In** Integration
 
-With the Squarelink Sign In button, you can authenticate your users and access info about their Squarelink accounts in minutes.
+With the Squarelink OAuth 2.0 **Sign In** button, you can authenticate your users and access info about their Squarelink accounts in minutes.
 
-Want to see it in action? **Check out this [example application](https://squarelink-inc.github.io/Sign-In-Example)**.
+Want to see it in action? **Check out this [example application <i class="fas fa-external-link-alt"></i>](https://squarelink-inc.github.io/Sign-In-Example)**.
 
-If you have not done so already, please [register your app or DApp](#getting-started) in the [Squarelink Developer Console](https://dev.squarelink.com).
+If you have not done so already, please [register your ÐApp](#getting-started) in the [Squarelink Developer Console](https://dev.squarelink.com).
 
-## Set Up Your App
+## **Sign In** Button
 
-Once you've registered your application, you can head to your application's home page in the [Developer Console](https://dev.squarelink.com) and click on "Sign In." We'll prompt you to add some application-specific information as follows:
-
-- **App Type:** What kind of application are you building?
-- **Redirect URI Whitelist:** A list of URLs that we are allowed to redirect back to after a user authorizes your app. **Leave blank to use any URL**.
-- **Website:** Your applications website.
-
-After you've set up your app or DApp for OAuth, you can simply copy and paste the auto-generated button code.
-
-## Sign In Button
-
-> Your button code should look something like this:
+> Sign In Button Template
 
 ```html
 <a href="https://app.squarelink.com/authorize?
-	client_id={{Your app's client_id}}
-	&scope=[{{Comma-separated desired scopes}}]
-	&redirect_uri={{One of your whitelisted redirect URIs}}
-	&state={{An optional csrf token}}
-	&response_type={{'code' or 'token'}}">
+	client_id=<CLIENT_ID>
+	&scope=[user:email,wallets:read]
+	&redirect_uri=https://yourdapp.com/redirect
+	&response_type=token">
     <img src="https://squarelink.com/img/sign-in.svg" width="220"></img>
 </a>
 ```
-Once you've set up your app or DApp for OAuth in the Developer Console, you can integrate the Sign In button in a cinch.
+Once you've set up your app or ÐApp for OAuth in the Developer Console, you can integrate the Sign In button in a cinch.
 
-The Sign In button should redirect the user to Squarelink's Authorization Page with the following parameters:
+When a user clicks the button, they'll be instructed to authorize your ÐApp and then they'll be redirected back to your page.
+
+Add, remove, and edit the following button parameters to get the functionality you need!
+
+
+### **Sign In** button parameters:
 
 Parameter | Required | Description
 --------- | ------- | -----------
-`client_id` | **true** | This is the `client_id` found on your app's home page in the Developer Console.
-`scope` | **true** | This is a comma-separated list of permissions you'd like to request from a user. (See available scopes below).
-`redirect_uri` | **true** | This is the URL you'd like us to send the user back to after the user has authorized your app. **Make sure it is whitelisted in your app's Sign In settings**.
-`state` | *false* | This can be any valid CSRF token (randomly generated). We'll return it to you as a URL parameter in the redirect to your application.
-response_type | **true** | Specifies the OAuth 2.0 grant type. Set to "**code**" to use the **[Authorization Code Grant](https://oauth.net/2/grant-types/authorization-code/)**. Set to "**token**" to use the **[Implicit Grant](https://oauth.net/2/grant-types/implicit/)**. Read [Obtain an Access Token](#obtain-an-access-token) for more info.
+`client_id` | **true** | This is the `client_id` associated with your ÐApp
+`scope` | **true** | This is a comma-separated list of permissions you'd like to request from a user. [(See available scopes below)](#available-scopes).
+`redirect_uri` | **true** | This is the URL you'd like us to send the user back to after the user has authorized your app.
+`state` | *false* | This can be any valid CSRF token. We'll return it to you as a URL parameter in the redirect to your application.
+`response_type` | **true** | Specifies the OAuth 2.0 grant type. Set to `code` to use the **[Authorization Code Grant](https://oauth.net/2/grant-types/authorization-code/)**. Set to `token` to use the **[Implicit Grant](https://oauth.net/2/grant-types/implicit/)**. Read [Obtain an Access Token](#obtain-an-access-token) for more info.
 
-Once a user has authorized your app or DApp, we'll redirect the user to the redirect URI specified (if whitelisted) with the following parameters:
+Once a user has authorized your app or ÐApp, we'll redirect the user to the redirect URI specified (if whitelisted) with the following parameters:
+
+### OAuth Redirect Parameters
 
 Parameter | Description
 --------- | -----------
@@ -51,9 +47,9 @@ Parameter | Description
 `access_token` | An access token *if you specified the `token` response_type*.
 `code` | An authorization code to be used in the second step of the Authorization Code Grant *if you specified the `code` response_type*.
 
-A successfully authorized request will redirect back to your redirect URI such as `http://localhost:8080/your-redirect-uri?code=xxxxx&state=xxxxx`.
+A successfully authorized request will redirect back to your redirect URI such as `http://localhost:8080/your-redirect-uri?code=<AUTHORIZATION CODE>&state=<STATE>`.
 
-If there is an issue with your request, we'll redirect back to your application with the `error` parameter. For instance, `http://localhost:8080/your-redirect-uri?error=description%20of%20the%20problem`.
+If there is an issue with your request, we'll redirect back to your application with the `error` parameter. For instance, `http://localhost:8080/your-redirect-uri?error=<DESCRIPTION OF PROBLEM>`.
 
 ### Available Scopes
 Parameter | Description

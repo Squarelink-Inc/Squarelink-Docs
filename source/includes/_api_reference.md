@@ -1,7 +1,7 @@
 
 # API Reference
 
-By now, you have registered your app or DApp and integrated the Squarelink Sign In button. If you haven't done so already, [read how](#sign-in-integration).
+By now, you have registered your app or ÐApp and integrated the Squarelink Sign In button. If you haven't done so already, [read how](#sign-in-integration).
 
 For any of the following API Routes, we expect that you have [obtained an access token](#obtain-an-access-token) for your user's Squarelink account.
 
