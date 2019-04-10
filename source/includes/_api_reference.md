@@ -7,15 +7,12 @@ For any of the following API Routes, we expect that you have [obtained an access
 
 _**API Endpoint:**_ *[https://api.squarelink.com](https://api.squarelink.com)*
 
-<aside class="notice">All routes are currently GET requests exclusively for viewing user's account info.</aside>
-
-## User Info
-
-### GET /user
+<hr>
+## GET /user
 > GET /user request example
 
 ```shell
-GET https://api.squarelink.com/user?access_token=xxx.xxxxx.xxx
+$ curl -X GET -H "Content-type: application/json" https://api.squarelink.com/user?access_token=<ACCESS_TOKEN>
 ```
 
 > Example Response
@@ -27,38 +24,42 @@ GET https://api.squarelink.com/user?access_token=xxx.xxxxx.xxx
   "email": "satoshi@squarelink.com",
   "family_name": "Nakamoto",
   "given_name": "Satoshi",
+  "email_verified": true,
+  "has_2fa": true,
+  "has_recovery": true,
   "created": 114012480
 }
 ```
+Read a user's Squarelink Account info such as their email, name, and security settings with this route.
 
-<aside class="notice">You must be authorized for the <i>user</i> scope to access this route.</aside>
-
-Read a user's Squarelink Account info such as their email, family name, and given name with this route:
+### Required Scopes: `user`, `user:name`, `user:email`, or `user:security`
 
 ### Request Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
 
 ### Response Body
-Parameter | Type | Description
---------- | ----------- | -----------
-**`success`** | **Boolean** | Indicates if the request was successful
-**`id`** | **String** | The user's Squarelink User ID
-**`email`** | **String** | The user's email address
-**`family_name`** | **String** | The user's last name
-**`given_name`** | **String** | The user's first name
-**`created`** | **Number** | When the user's account was created *(seconds from the Epoch)*
+Parameter | Type | Required Scope | Description
+--------- | ----------- | --------- | -----------
+**`success`** | **Boolean** | Any | Indicates if the request was successful
+**`id`** | **String** | Any | The user's Squarelink User ID.
+**`email`** | **String** | `user:email` | The user's email address.
+**`family_name`** | **String** | `user:name` | The user's last name.
+**`given_name`** | **String** | `user:name` | The user's first name.
+**`email_verified`** | **Boolean** | `user:security` | Indicates if the user has verified their email.
+**`has_2fa`** | **Boolean** | `user:security` | Indicates if the user has enabled 2-factor authentication.
+**`has_recovery`** | **Boolean** | `user:security` | Indicates if the user has enabled account recovery.
+**`created`** | **Number** | Any |  When the user's account was created *(seconds from the Epoch)*.
 
 
-## Wallets
-> GET /wallets request all currencies & ERC-20s
+<hr>
+
+## GET /wallets
+> GET /wallets Example Request
 
 ```shell
-GET https://api.squarelink.com/wallets?
-  access_token=xxx.xxxxx.xxx
-  &currencies=ETH;BTC;LTC
-  &erc20=true
+$ curl -X GET -H "Content-type: application/json" https://api.squarelink.com/wallets?access_token=<ACCESS_TOKEN>
 ```
 
 > Example Response
@@ -68,109 +69,216 @@ GET https://api.squarelink.com/wallets?
   "success": true,
   "wallets": [
     {
-      "balance": 2130542438999998500,
-      "owner": "u12345wabcdef"
-      "currency": "ETH",
-      "decimals": 18,
-      "name": "Ethereum",
+      "id": "w54131fbcdea01"
+      "owner": "u12345dabcdef"
+      "name": "Satoshi's ETH Account",
       "address": "0x223b22347674da1797120327991d315b22dc1030",
       "created_on": 1539049741
     },
     {
-      "owner": "u12345wabcdef",
-      "currency": "LTC",
-      "decimals": 8,
-      "name": "Litecoin",
-      "address": "LLTpMYh8iFDrCdWvhQTwUa1vLNEq4hGbTv",
-      "created_on": 1539049741,
-      "balance": 39020091001
+      "id": "w10abedcf13145"
+      "owner": "u12345dabcdef"
+      "name": "ETH Account 2",
+      "address": "0xf40bED2fFEE76B5517Fc992CC798Ece4c55D8F99",
+      "created_on": 1539048241
     },
-    {
-      "balance": 2079775461857,
-      "owner": "u12345wabcdef",
-      "currency": "BTC",
-      "decimals": 8,
-      "name": "Bitcoin",
-      "address": "1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s",
-      "created_on": 1539049741,
-     }
   ],
-  "erc20": [
-    {
-      "balance": 124800000,
-      "decimals": 18,
-      "contract_address": "0x595832f8fc6bf59c85c527fec3740a1b7a361269",
-      "symbol": "POWR",
-      "name": "PowerLedger"
-    },
-    {
-      "balance": 7.900590853137982e+21,
-      "decimals": 18,
-      "contract_address": "0xd26114cd6ee289accf82350c8d8487fedb8a0c07",
-      "symbol": "OMG",
-      "name": "OmiseGo"
-    }
-  ]  
 }
 ```
+Get a list of a user's Ethereum accounts and their addresses.
 
-<aside class="notice">All balances are passed in the smallest non-divisible value the respective currency supports.</aside>
-
-### GET /wallets
-<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope.</aside>
-
-Get a list of a Squarelink user's wallets and public information about those wallets. Optionally, if you're authorized with the `wallets:read` or `wallets:read:eth` scopes, you can request a list of active ERC-20 balances for the user as well.  
+### Required Scopes: `wallets:admin` or `wallets:read`
 
 ### Request Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user
-**`currencies`** | **String** | A semi-colon-separated list of currencies for the wallets you'd like to request. Valid currencies are `ETH`, `BTC`, and `LTC`.
-**`erc20`** | **Boolean** | Indicate whether you'd like us to return all valid ERC-20 balances. Only available if you're authorized for the `wallets:read` or `wallets:read:eth` scopes.
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
 
 ### Response Body
 Parameter | Type | Description
 --------- | ----------- | -----------
-**`success`** | **Boolean** | Indicates if the request was successful
-**`wallets`** | **Array** | A list of [Wallet Objects](#wallet-object)
-**`erc20`** | **Array** | A list of [ERC-20 Objects](#erc-20-object) (if you specified `erc20 = true`)
+**`success`** | **Boolean** | Indicates if the request was successful.
+**`wallets`** | **Array** | A list of [Wallet Objects](#wallet-object).
 
-### Wallet Object
+<hr>
 
-Parameter | Type | Description
---------- | ----------- | -----------
-**`owner`** | **String** | The ID of the Squarelink user owning the wallet
-**`currency`** | **String** | The currency of the wallet
-**`balance`** | **Float** | Whole number balance of the wallet, measured in the lowest non-divisible amount of its currency
-**`decimals`** | **Integer** | Number of decimal places the currency uses (i.e. 18 for ETH) for its lowest non-divisible amounts
-**`name`** | **String** | The name of the currency (i.e. "Bitcoin")
-**`address`** | **String** | The public address of the wallet
-**`created_on`** | **Integer** | Date created on Squarelink (number of seconds since the Epoch)
-
-### ERC-20 Object
-
-Parameter | Type | Description
---------- | ----------- | -----------
-**`balance`** | **Float** | Whole number amount of ERC-20 tokens held by the user's account (lowest non-divisible amount)
-**`decimals`** | **Integer** | Number of decimal places specified in the currency's contract
-**`contract_address`** | **String** | The contract address of the ERC-20 token
-**`symbol`** | **String** | The token symbol for the ERC-20 token (i.e. POWR for PowerLedger)
-**`name`** | **String** | The ERC-20's name (i.e. PowerLedger)
-**`address`** | **String** | The Squarelink user's Ethereum address holding these tokens
-
-## Transactions
-<aside class="notice">All token amounts are passed in the smallest non-divisible value the respective currency supports.</aside>
-
-### GET /txs
-> GET /txs Example Request (txs for ETH, BTC, LTC, and an ERC-20 token)
+## GET /wallet
+> GET /wallet Example Request
 
 ```shell
-GET https://api.squarelink.com/txs?
-  access_token=xxx.xxxxx.xxx
-  &currencies=ETH;LTC;BTC
-  &token_contracts=0xba5f00a28f732f23ba946c594716496ebdc9aef5
-  &page=1
-  &per_page=4
+$ curl -X GET -H "Content-type: application/json" https://api.squarelink.com/wallet?
+    access_token=<ACCESS_TOKEN>
+    wallet_id=<WALLET_ID>
+```
+
+> Example Response
+
+```shell
+{
+  "success": true,
+  "wallet": {
+    "id": "w54131fbcdea01"
+    "owner": "u12345dabcdef"
+    "name": "Satoshi's ETH Account",
+    "address": "0x223b22347674da1797120327991d315b22dc1030",
+    "created_on": 1539049741
+  }
+}
+```
+Get information for a specific wallet owned by a user.
+
+### Required Scopes: `wallets:admin` or `wallets:read`
+
+### Request Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
+**`wallet_id`** | **String** | *(Required)* The ID for the wallet you want to view.
+
+### Response Body
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`success`** | **Boolean** | Indicates if the request was successful.
+**`wallet`** | **Object** | A [Wallet Object](#wallet-object).
+
+<hr>
+
+## PATCH /wallet
+> PATCH /wallet Example Request
+
+```shell
+$ curl -X PATCH -H "Content-type: application/json" https://api.squarelink.com/wallet
+  -d '{
+    "access_token": "<ACCESS_TOKEN>",
+    "wallet_id": "w54131fbcdea01",
+    "name": "New Wallet Name"
+  }'
+```
+
+> Example Response
+
+```shell
+{
+  "success": true,
+  "wallet": {
+    "id": "w54131fbcdea01"
+    "owner": "u12345dabcdef"
+    "name": "New Wallet Name",
+    "address": "0x223b22347674da1797120327991d315b22dc1030",
+    "created_on": 1539049741
+  }
+}
+```
+Edit information for a specific wallet owned by a user.
+
+### Required Scopes: `wallets:admin` or `wallets:edit`
+
+### Request Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
+**`wallet_id`** | **String** | *(Required)* The ID for the wallet you want to view.
+**`name`** | **String** | Name you want to set for the wallet.
+
+### Response Body
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`success`** | **Boolean** | Indicates if the request was successful.
+**`wallet`** | **Object** | A [Wallet Object](#wallet-object).
+
+
+<hr>
+
+## DELETE /wallet
+> DELETE /wallet Example Request
+
+```shell
+$ curl -X DELETE -H "Content-type: application/json" https://api.squarelink.com/wallet?
+    access_token=<ACCESS_TOKEN>
+    wallet_id=<WALLET_ID>
+```
+
+> Example Response
+
+```shell
+{
+  "success": true,
+  "message": "Wallet deleted successfully"
+}
+```
+Delete a wallet owned by a user that was created by your app
+
+### Required Scopes: `wallets:admin` or `wallets:remove`
+
+### Request Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
+**`wallet_id`** | **String** | *(Required)* The ID for the wallet you want to view.
+
+### Response Body
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`success`** | **Boolean** | Indicates if the request was successful.
+**`message`** | **String** | A message about the request.
+
+
+
+<hr>
+## POST /wallet
+> POST /wallet Example Request
+
+```shell
+$ curl -X POST -H "Content-type: application/json" https://api.squarelink.com/wallet
+  -d '{
+    "access_token": "<ACCESS_TOKEN>",
+    "name": "New Wallet"
+  }'
+```
+
+> Example Response
+
+```shell
+{
+  "success": true,
+  "wallet": {
+    "id": "w54131fbcdea01"
+    "owner": "u12345dabcdef"
+    "name": "New Wallet",
+    "address": "0xd26114cd6EE289AccF82350c8d8487fedB8A0C07",
+    "created_on": 1539049741
+  }
+}
+```
+Edit information for a specific wallet owned by a user.
+
+### Required Scopes: `wallets:admin` or `wallets:edit`
+
+### Request Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
+**`wallet_id`** | **String** | *(Required)* The ID for the wallet you want to view.
+**`name`** | **String** | Name you want to set for the wallet.
+
+### Response Body
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`success`** | **Boolean** | Indicates if the request was successful.
+**`wallet`** | **Object** | A [Wallet Object](#wallet-object).
+
+
+<hr>
+## GET /txs
+> GET /txs Example Request
+
+```shell
+$ curl -X GET -H "Content-type: application/json" https://api.squarelink.com/txs?
+    access_token=<ACCESS_TOKEN>
+    &network=custom
+    &network_config=%7B%22url%22:%22http:%2F%2Flocalhost:8545%22,%22chain_id%22:24214%7D
+    &page=1
+    &per_page=10
 ```
 > Response Body
 
@@ -178,142 +286,157 @@ GET https://api.squarelink.com/txs?
 {
   "success": "true",
   "page_count": 23,
-  "per_page": 4,
+  "per_page": 10,
   "page": 1,
   "txs": [
     {
-      "currency": "BTC",
-      "id": "5ee585d5f7f7be8b056991042e6bf092e2e2a2324e217591124393c1259f0f59",
-      "sub": "u12345abcdef",
-      "action": "received",
-      "block_number": null,
-      "confirmations": 0,
-      "date": 1539145879,
-      "decimals": 8,
-      "from": '36yKKUFiKzCoFh5QrHivpJVSYQwYwG6Hms',
-      "status": "pending",
-      "to": "1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s",
-      "value": 10000000000
-    },
-    {
-      "currency": "LTC",
-      "id": "71f2e39bf9834c9eee7289d435a4f2fd294dc8576934fb91212f536e5ac7bca4",
-      "sub": "u12345abcdef",
-      "action": "received",
-      "block_number": 1498994,
-      "confirmations": 7615,
-      "date": 1538002833,
-      "decimals": 8,
-      "from": "LXphMWB3FwvMKXEzjJhGWXMeLzVZfUEcci",
-      "status": "confirmed",
-      "to": "LLTpMYh8iFDrCdWvhQTwUa1vLNEq4hGbTv",
-      "value": 639798772
-    },
-    {
-      "currency": "ETH",
-      "id": "0xb3730f2b2af151a0aac5aca15bebb2b0b1fb242ca67c180045ff707e2f386cd0",
-      "sub": "u12345abcdef",
-      "action": "sent",
-      "block_hash":
-       "0xa19cce7bf340f866101aa1fb4a2500f168bb11436934128d32b3553fbb9b7abc",
-      "block_number": 4854110,
-      "confirmations": 1693271,
-      "contract_address": null,
-      "data": null,
-      "date": 1515090524,
-      "decimals": 18,
-      "from": "0x223b22347674da1797120327991d315b22dc1030",
-      "gas": 21000,
-      "gas_price": 31000000000,
-      "gas_used": 21000,
-      "index": 78,
-      "nonce": 22,
-      "status": "confirmed",
-      "to": "0x5700333a342bc21bf400c66ab0685867c4dde332",
-      "value": 100000000000000000
-    },
-    {
-      "currency": "ETH",
       "id": "0x8372289b2b811ca6b66797cd28a51af63b5468d57b505643716b0bb82be4387b",
       "sub": "u12345abcdef",
-      "action": "received",
-      "block_hash": "0x479ee01736fe8db8662fe48ecec923f00d1403daac5e55c6bfeba76d1e5ba18f",
-      "block_number": 5860219,
-      "confirmations": 687162,
-      "contract_address": "0xba5f00a28f732f23ba946c594716496ebdc9aef5",
-      "data": "0xa9059cbb000000000000000000000000223b22347674da1797120327991d315b22dc103000000000000000000000000000000000000000000000006d6639464dd6100000",
-      "date": 1530057183,
-      "decimals": 18,
+      "network": "custom",
+      "network_config": {
+        "url": "https://localhost:8545",
+        "chain_id": 24214
+      },
+      "wallet_id": "w96cae4bf1122",
       "from": "0x00f9252f87531fdb919a686e3e21d006a6304658",
-      "gas": 61000,
-      "gas_price": 3300000000,
-      "gas_used": 53355,
-      "index": 52,
-      "nonce": 20709,
-      "status": "confirmed",
       "to": "0x223b22347674da1797120327991d315b22dc1030",
-      "token_decimals": null,
-      "token_name": "OmiseGo",
-      "token_symbol": "OMG",
-      "token_value": 2.0180611e+21,
-      "value": 0
+      "gas": "61000",
+      "gasPrice": "3300000000",
+      "value": "0",
+      "nonce": "29",
+      "hex": "0xf86a141482520894948b48c6ef7564254bfb74e90a3856b70e8374e9890d108bff209524000080820a96a0aaf11ea3a5dabcaa095b54921fa46e8ed70481d7fc7252503bd5968fae0e1477a03fd4f1cd1b5e1444e54321168c7464cf98fa95bca1efbff9d0c160d3a03713ff",
+      "signature": {
+        "v": 2710,
+        "r": "0xaaf11ea3a5dabcaa095b54921fa46e8ed70481d7fc7252503bd5968fae0e1477",
+        "s": "0x3fd4f1cd1b5e1444e54321168c7464cf98fa95bca1efbff9d0c160d3a03713ff",
+      },
+      "date": 1538002833
     }
+    ...
   ]
 }
 ```
+You can use this route to list a Squarelink user's transactions for a specific network.
 
-<aside class="notice">This route requires the <i>wallets:read</i> OR <i>wallets:read:<DESIRED CURRENCY></i> scope.</aside>
-
-You can use this route to list a Squarelink user's transactions by currency, including specific ERC-20 token transactions or *all* ERC-20 token transactions. *Note:* All transaction requests are paginated.
+### Required Scopes: `wallets:admin` or `wallets:read`
 
 ### Request Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user
-**`currencies`** | **String** | A semi-colon-separated list of currencies for the transactions you'd like to request. Valid currencies are `ETH`, `BTC`, and `LTC`.
-**`token_contracts`** | **String** | A semi-colon-separated list of contract addresses for ERC-20 tokens that you want to request transactions for. Only available if you're authorized for the `wallets:read` or `wallets:read:eth` scopes.
-**`all_erc20`** | **Boolean** | Indicate whether you'd like us to return all ERC-20 transactions for a user. Only available if you're authorized for the `wallets:read` or `wallets:read:eth` scopes.
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
+**`network`** | **String** | *(Required)* The desired network from which to list transactions. See [Available Networks](#available-networks)
+**`network_config`** | **Object** | *(Required if network is `custom`)* URL Query-encoded object with following properties:
+**`network_config.url`** | **String** | *(Required if network is `custom`)* RPC Endpoint for your custom network.
+**`network_config.chain_id`** | **Integer** | *(Optional)* Chain ID for your custom network.
+**`wallet_id`** | **String** | *(Optional)* Specific target wallet owned by the user.
+**`client_id`** | **String** | *(Optional)* Filter transactions with the `client_id` of an app you own.
 **`page`** | **Number** | *(Default: 1).* The page number for the paginated request.
-**`per_page`** | **Number** | *(Default: 10)* The number of transactions you'd like per page. *Max is 20*
+**`per_page`** | **Number** | *(Default: 10)* The number of transactions you'd like per page. *Max is 20*.
 
 ### Response Body
 Parameter | Type | Description
 --------- | ----------- | -----------
-**`success`** | **Boolean** | Indicates if the request was successful
-**`txs`** | **Array** | An array of [Transaction Objects](#transaction-object)
-**`page_count`** | **Number** | Number of pages available
-**`page`** | **Number** | Current page
-**`per_page`** | **Number** | Results per page
+**`success`** | **Boolean** | Indicates if the request was successful.
+**`txs`** | **Array** | An array of [Transaction Objects](#transaction-object).
+**`page_count`** | **Number** | Number of pages available.
+**`page`** | **Number** | Current page.
+**`per_page`** | **Number** | Results per page.
 
-### Transaction Object
 
-<aside class="warning">The transaction model and routes are currently experimental. If you require additional information about a transaction, we recommend using a dedicated Blockchain explorer API.</aside>
+<hr>
+## GET /tx
+> GET /tx Example Request
 
-Our transaction object has a large number of parameters which allows us to ubiquitously collect transactions across multiple blockchains. Please note the fields that are specific to certain blockchains and types of transactions.
+```shell
+$ curl -X GET -H "Content-type: application/json" https://api.squarelink.com/tx?
+    access_token=<ACCESS_TOKEN>
+    &network=kovan
+    &page=1
+    &per_page=10
+```
+> Response Body
+
+```shell
+{
+  "success": "true",
+  "tx": {
+    "id": "0x8372289b2b811ca6b66797cd28a51af63b5468d57b505643716b0bb82be4387b",
+    "sub": "u12345abcdef",
+    "network": "kovan",
+    "wallet_id": "w96cae4bf1122",
+    "from": "0x00f9252f87531fdb919a686e3e21d006a6304658",
+    "to": "0x223b22347674da1797120327991d315b22dc1030",
+    "gas": "61000",
+    "gasPrice": "3300000000",
+    "value": "0",
+    "nonce": "29",
+    "hex": "0xf86a141482520894948b48c6ef7564254bfb74e90a3856b70e8374e9890d108bff209524000080820a96a0aaf11ea3a5dabcaa095b54921fa46e8ed70481d7fc7252503bd5968fae0e1477a03fd4f1cd1b5e1444e54321168c7464cf98fa95bca1efbff9d0c160d3a03713ff",
+    "signature": {
+      "v": 2710,
+      "r": "0xaaf11ea3a5dabcaa095b54921fa46e8ed70481d7fc7252503bd5968fae0e1477",
+      "s": "0x3fd4f1cd1b5e1444e54321168c7464cf98fa95bca1efbff9d0c160d3a03713ff",
+    },
+    "date": 1538002833,
+    "state": "be3jem87wnsmu6",
+    "client_id": "f42146f2b57b4f481d95"
+  }
+}
+```
+You can use this route to view information about a specific transaction sent by a user.
+
+### Required Scopes: `wallets:admin` or `wallets:read`
+
+### Request Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
+**`id`** | **String** | *(Required)* Hash of the transaction on the blockchain.
+**`network`** | **String** | *(Required)* The network on which the transaction was broadcast. See [Available Networks](#available-networks)
+**`network_config`** | **Object** | *(Required if network is `custom`)* URL Query-encoded object with following properties:
+**`network_config.url`** | **String** | *(Required if network is `custom`)* RPC Endpoint for your custom network.
+**`network_config.chain_id`** | **Integer** | *(Optional)* Chain ID for your custom network.
+
+### Response Body
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`success`** | **Boolean** | Indicates if the request was successful.
+**`tx`** | **Array** | A [Transaction Object](#transaction-object).
+
+
+## Object Models
+
+
+### Wallet Object
 
 Parameter | Type | Description
 --------- | ----------- | -----------
-**`currency`** | **String** | ETH, BTC, or LTC (ETH for ERC-20 txs)
-**`id`** | **String** | The transaction hash on the blockchain
-**`sub`** | **String** | The sender or recipient's Squarelink account ID
-**`from`** | **String** | Sending address of the transaction
-**`to`** | **String** | Recipient address of the transaction
-**`value`** | **Float** | Token value sent measured in lowest non-divisible units of the token (ETH for ERC-20 tokens)
-**`action`** | **String** | "sent" or "received"
+**`id`** | **String** | Squarelink's identifier for the wallet.
+**`owner`** | **String** | The ID of the Squarelink user owning the wallet.
+**`name`** | **String** | The user's name for that wallet.
+**`address`** | **String** | The public address of the wallet.
+**`created_on`** | **Integer** | Date created on Squarelink (number of seconds since the Epoch).
+
+
+
+### Transaction Object
+
+Parameter | Type | Description
+--------- | ----------- | -----------
+**`id`** | **String** | The transaction hash on the blockchain.
+**`sub`** | **String** | The sender's Squarelink account ID.
+**`network`** | **String** | Network on which the transaction was sent. See [Available Networks](#available-networks).
+**`network_config`** | **Object** | *(If network is `custom`)* Object with following properties:
+**`network_config.url`** | **String** | *(If network is `custom`)* RPC Endpoint for the custom network.
+**`network_config.chain_id`** | **Integer** | Chain ID for the custom network.
+**`wallet_id`** | Squarelink identifier for sender's wallet.
+**`from`** | **String** | Sender's address for the transaction.
+**`to`** | **String** | Recipient address of the transaction.
+**`value`** | **String** | Value sent in Wei.
+**`data`** | **String** | Data for contract function calls.
+**`gas`** | **String** | Gas used for the transaction.
+**`gasPrice`** | **String** | Gas price in Gwei.
+**`nonce`** | **String** | Nonce of a transaction for a user's address.
+**`raw`** | **String** | Original raw hex data broadcast to the blockchain.
+**`client_id`** | **String** | Client ID of the app associated with the transaction (if owned by you).
+**`state`** | **String** | State associated with the transaction request (if requested by you).
 **`date`** | **Number** | Datetime the transaction was broadcast. Number of seconds since the epoch.
-**`decimals`** | **Number** | Number of decimals for the base currency (i.e. 18 for ETH, 8 for BTC)
-**`block_number`** | **Number** | The index of the block on the blockchain
-**`confirmations`** | **Number** | Number of times a transaction has been confirmed
-**`status`** | **String** | `confirmed`, `pending`, or `failed`
-**`block_hash`** | **String** | The hash of the block the transaction is found in (unless it is the most recent block) *(If ETH transaction)*
-**`data`** | **String** | Contract data field *(if ETH transaction)*
-**`gas`** | **Number** | Gas limit used for the transaction *(if ETH transaction)*
-**`gas_price`** | **Number** | Gas price in lowest non-divisible amount of Ether *(if ETH transaction)*
-**`gas_used`** | **Number** | Amount of gas used for the transaction *(if ETH transaction)*
-**`index`** | **Number** | Index of a transaction in a block *(if ETH transaction)*
-**`nonce`** | **Number** | Nonce of a transaction for a user's address *(if ETH transaction)*
-**`contract_address`** | **String** | The contract address of an ERC-20 token *(if ERC-20 transaction)*
-**`token_decimals`** | **Number** | Decimals specified by the ERC-20 token contract *(if ERC-20 transaction)*
-**`token_name`** | **String** | Token name specified by the ERC-20 token contract *(if ERC-20 transaction)*
-**`token_symbol`** | **String** | Token symbol specified by the ERC-20 token contract *(if ERC-20 transaction)*
-**`token_value`** | **Float** | ERC-20 token value transferred measured in the smallest non-divisible units of the token *(if ERC-20 transaction)*

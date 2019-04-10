@@ -370,6 +370,10 @@ html, body {
     color: rgb(217, 220, 237);
   }
 
+  .nv {
+    color: #15be07;
+  }
+
   // the div is the tocify hidden div for placeholding stuff
   &>h1, &>h2, &>div {
     clear:both;
@@ -492,7 +496,7 @@ html, body {
     background-color: rgba(0,0,0,0.05);
     padding: 3px;
     border-radius: 3px;
-    @extend %break-words;
+    //@extend %break-words;
     @extend %code-font;
   }
 

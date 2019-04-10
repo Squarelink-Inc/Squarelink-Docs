@@ -31,21 +31,22 @@ Add, remove, and edit the following button parameters to get the functionality y
 
 Parameter | Required | Description
 --------- | ------- | -----------
-`client_id` | **true** | This is the `client_id` associated with your ÐApp
-`scope` | **true** | This is a comma-separated list of permissions you'd like to request from a user. [(See available scopes below)](#available-scopes).
-`redirect_uri` | **true** | This is the URL you'd like us to send the user back to after the user has authorized your app.
-`state` | *false* | This can be any valid CSRF token. We'll return it to you as a URL parameter in the redirect to your application.
+`client_id` | **true** | This is the `client_id` associated with your ÐApp.
+`scope` | **true** | A comma-separated list of permissions you'd like to request from a user. [(See available scopes below)](#available-scopes).
+`redirect_uri` | **true** | The URL you'd like us to send the user back to after the user has authorized your app.
+`state` | *false* | Any valid CSRF token. We'll return it to you as a URL parameter in the redirect to your application.
 `response_type` | **true** | Specifies the OAuth 2.0 grant type. Set to `code` to use the **[Authorization Code Grant](https://oauth.net/2/grant-types/authorization-code/)**. Set to `token` to use the **[Implicit Grant](https://oauth.net/2/grant-types/implicit/)**. Read [Obtain an Access Token](#obtain-an-access-token) for more info.
 
 Once a user has authorized your app or ÐApp, we'll redirect the user to the redirect URI specified (if whitelisted) with the following parameters:
 
-### OAuth Redirect Parameters
+### Redirect Response
 
 Parameter | Description
 --------- | -----------
 `state` | Returned if you passed it in the request.
 `access_token` | An access token *if you specified the `token` response_type*.
 `code` | An authorization code to be used in the second step of the Authorization Code Grant *if you specified the `code` response_type*.
+`error` | A description of any issues with your request
 
 A successfully authorized request will redirect back to your redirect URI such as `http://localhost:8080/your-redirect-uri?code=<AUTHORIZATION CODE>&state=<STATE>`.
 
@@ -54,23 +55,27 @@ If there is an issue with your request, we'll redirect back to your application 
 ### Available Scopes
 Parameter | Description
 --------- | -----------
-**`user`** | This allows you to view user info such as email, given_name, and family_name.
-**`wallets:read`** | This allows you to read info such as transactions and addresses for all of a user's blockchain accounts.
-**`wallets:read:eth`** | A reduced-scope version of `wallets:read` limited to Ethereum accounts.
-**`wallets:read:btc`** | A reduced-scope version of `wallets:read` limited to Bitcoin accounts.
-**`wallets:read:ltc`** | A reduced-scope version of `wallets:read` limited to Litecoin accounts.
+**`user:name`** | Allows you to read a user's name.
+**`user:email`** | Allows you to see a user's email address.
+**`user:security`** | Allows you to see a user's security settings.
+**`user`** | Equivalent to all `user` scopes.
+**`wallets:read`** | Allows you to see a user's wallets and transactions.
+**`wallets:edit`** | Allows you to edit some information associated with a user's wallets.
+**`wallets:create`** | Allows you to create new wallets for a user.
+**`wallets:remove`** | Allows you to delete any wallets your app has created.
+**`wallets:admin`** | Equivalent to all `wallet` scopes.
 
 ## Obtain an Access Token
 
 > Authorization Code Grant Request Example
 
 ```shell
-GET https://oauth.squarelink.com/token?
-  grant_type=authorization_code
-  &client_id=xxxxx
-  &client_secret=xxxxx
-  &code=xxxxx
-  &state=xxxxx
+$ curl -X GET -H "Content-type: application/json" https://oauth.squarelink.com/token?
+		grant_type=authorization_code
+		&client_id=<CLIENT_ID>
+		&client_secret=<CLIENT_SECRET>
+		&code=<AUTHORIZATION_CODE>
+		&state=<STATE>
 ```
 
 > Example Response
@@ -95,8 +100,6 @@ We will redirect to your application with a URL parameter called `code` as well 
 
 You can now exchange `code` (and `state` if used) for an access token using Squarelink's OAuth API.
 
-<aside class="success">Now you're ready to use the Squarelink API. Use the resulting access token in all requests</aside>
-
 ### _**Request Endpoint:**_ *[https://oauth.squarelink.com/token](https://oauth.squarelink.com/token)*
 
 ### Request Parameters
@@ -117,21 +120,19 @@ Parameter | Type | Description
 **`access_token`** | **String** | A JSON Web Token you can use to access Squarelink's API
 **`refresh_token`** | **String** | A token you can use to refresh your access token after expiration [(See Below)](#refreshing-an-access-token)
 
-
-<aside class="notice">Make sure you replace "client_id" and "client_secret" with the values found on the home page of your
-app in the Developer Console</aside>
+<aside class="success">Now you're ready to use the Squarelink API. Use the resulting access token in all requests</aside>
 
 ## Refreshing an Access Token
 
-> Refresh Grant Request Example
+> Refresh Grant Request
 
 ```shell
-GET https://oauth.squarelink.com/token?
-  grant_type=refresh
-  &client_id=xxxxx
-  &client_secret=xxxxx
-  &refresh_token=xxxxx
-  &scope=[wallets:read:eth,user]
+$ curl -X GET -H "Content-type: application/json" https://oauth.squarelink.com/token?
+	  grant_type=refresh
+	  &client_id=<CLIENT_ID>
+	  &client_secret=<CLIENT_SECRET>
+	  &refresh_token=<REFRESH_TOKEN>
+	  &scope=<SCOPE>
 ```
 
 > Example Response
@@ -148,7 +149,7 @@ GET https://oauth.squarelink.com/token?
 
 If you used the Authorization Code Grant method to get authorization from a user, you can refresh the resulting access token to prevent expiry. To do so, you must store the `refresh_token` received in the original response.
 
-You may specify a new reduced scope as well. This new scope must be limited to scopes authorized in the initial authorization. For instance, if you were initially authorized for only `wallets:read:eth`, you cannot request `wallets:read`.
+You may specify a new reduced scope as well. This new scope must be limited to scopes authorized in the initial authorization. For instance, if you were initially authorized for only `wallets:read`, you cannot request `wallets:admin`.
 
 ### _**Request Endpoint:**_ *[https://oauth.squarelink.com/token](https://oauth.squarelink.com/token)*
 
