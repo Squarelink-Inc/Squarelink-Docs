@@ -44,7 +44,7 @@ Initialize the Squarelink Object and set it as your Web3 Provider for your appli
 Parameter | Type | Description
 --------- | ------- | -----------
 `clientId` | **String** | This is the `clientId` associated with your ÐApp.
-`network` | **String|Object** | The name of a network supported by Squarelink, or your own custom network configuration (See below).
+`network` | **String|Object** | Defaults to `mainnet`. The name of a network supported by Squarelink, or your own custom network configuration (See below).
 
 ### Supported Networks:
 
