@@ -13,7 +13,9 @@ Squarelink is the long awaited, non-custodial, alternative to MetaMask that enab
 
 We'll walk you through integrating Squarelink into your app or ÐApp so your users can easily interact with the blockchain.
 
-For this, we offer the Web3-based **"Sign Tx"** tool that allows you to easily request transactions from a user. We also provide a standard OAuth 2.0 **"Sign In"** integrations along with a REST API for interacting with Squarelink user accounts.
+For this, you can quickly install our Web3 Provider and use Web3.js as you normally would!
+
+We also offer the OAuth-style **"Sign Tx"** tool that allows you to easily request transactions from a user without requiring Web3 capabilities in your app. Along with it, we provide a standard OAuth 2.0 **"Sign In"** integrations along with a REST API for interacting with Squarelink user accounts.
 
 <aside class="warning">Squarelink is currently in Beta. We will periodically add features, but we don't anticipate any breaking changes to our API.</aside>
 

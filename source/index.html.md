@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - introduction
+  - web3_integration
   - sign_tx_integration
   - sign_in_integration
   - api_reference
