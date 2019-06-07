@@ -37,14 +37,14 @@ window.web3.eth.getAccounts().then(console.log)
 
 ### Usage
 
-Initialize the Squarelink Object and set it as your Web3 Provider for your application.
+Initialize the Squarelink Object and set it as your Web3 Provider for your application. **Sweet, you're already finished!**
 
-**const new Squarelink(clientId[, network])**
+`const sqlk = new Squarelink(clientId [, network])`
 
 Parameter | Type | Description
 --------- | ------- | -----------
 `clientId` | **String** | This is the `clientId` associated with your ÐApp.
-`network` | **String|Object** | Defaults to `mainnet`. The name of a network supported by Squarelink, or your own custom network configuration (See below).
+`network` | **String&#124;Object** | The name of a network supported by Squarelink, or your own custom network configuration (See below). Defaults to `mainnet`.
 
 ### Supported Networks:
 
@@ -52,6 +52,7 @@ Parameter | Type | Description
 - **Ropsten Network** - `ropsten`
 - **Kovan Network** - `kovan`
 - **Rinkeby Network** - `rinkeby`
+- **Private Networks** - see below
 
 > Custom network example
 

@@ -1,6 +1,8 @@
 
 # **Sign Tx** Integration
 
+Don't want to install web3? Just want to request transactions quick and simple?
+
 With **Sign Tx**, you can quickly onboard users to your Web3 ÐApp with a familiar, OAuth-style, Web2 interface and development experience. Simply add your **Sign Tx** button into your ÐApp and you're good to go! No need to worry about installing Web3!
 
 If you have not done so already, please [register your ÐApp](#getting-started) in the [Squarelink Developer Console](https://dev.squarelink.com).
