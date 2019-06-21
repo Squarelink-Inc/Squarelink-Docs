@@ -152,6 +152,7 @@ $ curl -X PATCH -H "Content-type: application/json" https://api.squarelink.com/w
     "access_token": "<ACCESS_TOKEN>",
     "wallet_id": "w54131fbcdea01",
     "name": "New Wallet Name"
+    "make_default": true
   }'
 ```
 
@@ -179,6 +180,7 @@ Parameter | Type | Description
 **`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
 **`wallet_id`** | **String** | *(Required)* The ID for the wallet you want to view.
 **`name`** | **String** | Name you want to set for the wallet.
+**`make_default`** | **Boolean** | `true` if you want to set this as the user's default wallet.
 
 ### Response Body
 Parameter | Type | Description
