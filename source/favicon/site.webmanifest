@@ -1,0 +1,19 @@
+{
+    "name": "Squarelink Wallet",
+    "short_name": "Squarelink Wallet",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#e8eeff",
+    "background_color": "#e8eeff",
+    "display": "standalone"
+}
