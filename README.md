@@ -1,6 +1,6 @@
 ## Squarelink Developer Documentation
 
-### Documentation Home Page: [https://squarelink.com/docs](https://squarelink.com/docs)
+### Documentation Home Page: [https://docs.squarelink.com](https://docs.squarelink.com)
 
 ### Contributing to the Docs
 

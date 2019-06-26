@@ -1,5 +1,5 @@
 
-# **Quickstart**
+# **Quickstart (Web3)**
 
 Already have a ÐApp using web3.js? Plug in Squarelink in minutes!
 
@@ -39,12 +39,15 @@ window.web3.eth.getAccounts().then(console.log)
 
 Initialize the Squarelink Object and set it as your Web3 Provider for your application. **Sweet, you're already finished!**
 
-`const sqlk = new Squarelink(clientId [, network])`
+`const sqlk = new Squarelink(clientId [, network, opts])`
 
 Parameter | Type | Description
 --------- | ------- | -----------
 `clientId` | **String** | This is the `clientId` associated with your ÐApp.
 `network` | **String&#124;Object** | The name of a network supported by Squarelink, or your own custom network configuration (See below). Defaults to `mainnet`.
+`opts` | **Object** | Additional options to pass to the Squarelink constructor (see below)
+
+
 
 ### Supported Networks:
 
@@ -52,7 +55,7 @@ Parameter | Type | Description
 - **Ropsten Network** - `ropsten`
 - **Kovan Network** - `kovan`
 - **Rinkeby Network** - `rinkeby`
-- **Private Networks** - see below
+- **Private/Custom Networks** - see below
 
 > Custom network example
 
@@ -71,3 +74,38 @@ Parameter | Type | Description
 --------- | ------- | -----------
 `url` | **String** | The JSON_RPC endpoint Squarelink will connect to.
 `chainId` | **Number** | *(optional)* Chain ID for your network
+
+> Custom Methods Example
+
+```javascript
+...
+const sqlk = new Squarelink('<YOUR CLIENT ID>', 'mainnet', {
+  scope: ['user:name','user:email']
+})
+sqlk.getName()
+> Satoshi Nakamoto
+
+sqlk.getEmail()
+> satoshi@buttcoin.io
+...
+```
+
+### Options (`opts`)
+
+Parameter | Type | Description
+--------- | ------- | -----------
+`scope` | `Array` | Request additional scopes to use custom Squarelink functions.
+
+#### Available Scopes:
+- `user` - Equivalent to all scopes below
+- `user:name` - Access to read user's name
+- `user:email` - Access to user's email address
+- `user:security` - Access to read user's security settings
+
+### Custom Squarelink Methods
+
+- *Squarelink*.**getName()** - requires the `user` or `user:name` scope
+
+- *Squarelink*.**getEmail()** - requires the `user` or `user:email` scope
+
+- *Squarelink*.**getSecuritySettings()** - requires the `user` or `user:security` scope
