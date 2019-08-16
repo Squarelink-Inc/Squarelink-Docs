@@ -52,9 +52,11 @@ Parameter | Type | Description
 ### Supported Networks:
 
 - **Ethereum Mainnet** - `mainnet`
+- **xDai Network** - `xdai`
 - **Ropsten Network** - `ropsten`
 - **Kovan Network** - `kovan`
 - **Rinkeby Network** - `rinkeby`
+- **Goerli Network** - `goerli`
 - **Private/Custom Networks** - see below
 
 > Custom network example

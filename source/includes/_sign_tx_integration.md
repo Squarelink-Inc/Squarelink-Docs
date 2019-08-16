@@ -69,9 +69,11 @@ We will only accept custom networks with secure RPC endpoints (https). Read how 
 Network | Description
 --------- | -------
 **mainnet** | The Ethereum Main Network.
-**ropsten** | The Ropsten Ethereum Network.
-**kovan** | The Kovan Ethereum Network.
-**rinkeby** | The Rinkeby Ethereum Network.
+**xdai** | The xDai Network.
+**ropsten** | The Ropsten Testnet.
+**kovan** | The Kovan Testnet.
+**rinkeby** | The Rinkeby Testnet.
+**goerli** | The Goerli Testnet.
 **custom** | Any network with a Web3 standard public RPC endpoint.
 
 ## Advanced Settings
