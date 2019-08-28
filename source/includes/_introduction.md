@@ -17,8 +17,6 @@ For this, you can quickly install our Web3 Provider and use Web3.js as you norma
 
 We also offer the OAuth-style **"Sign Tx"** tool that allows you to easily request transactions from a user without requiring Web3 capabilities in your app. Along with it, we provide a standard OAuth 2.0 **"Sign In"** integrations along with a REST API for interacting with Squarelink user accounts.
 
-<aside class="warning">Squarelink is currently in Beta. We will periodically add features, but we don't anticipate any breaking changes to our API.</aside>
-
 ## Getting Started
 
 To start integrating either **Sign Tx** or **Sign In**, let's first create an account in our [Developer Console](https://dev.squarelink.com) and register your ÐApp.

@@ -28,11 +28,15 @@ First, install Squarelink's Web3 Provider from your preferred source. (See on th
 import Squarelink from 'squarelink'
 import Web3 from 'web3'
 
-const sqlk = new Squarelink('<YOUR CLIENT ID>')
-window.web3 = new Web3(sqlk.getProvider())
+const sqlk = new Squarelink('Your-Dapp-ID')
 
-// Use standard Web3 methods as you normally would
-window.web3.eth.getAccounts().then(console.log)
+// Use Promise or callback
+sqlk.getProvider((provider, err) => {
+  window.web3 = new Web3(provider)
+
+  // Use standard Web3 methods as you normally would
+  window.web3.eth.getAccounts().then(console.log)
+})
 ```
 
 ### Usage
@@ -111,3 +115,17 @@ Parameter | Type | Description
 - *Squarelink*.**getEmail()** - requires the `user` or `user:email` scope
 
 - *Squarelink*.**getSecuritySettings()** - requires the `user` or `user:security` scope
+
+
+> Detecting Squarelink
+
+```javascript
+...
+web3.currentProvider.isSquarelink
+> true
+...
+```
+
+### Detecting Squarelink
+
+We attach the `isSquarelink` attribute to our provider for you to identify us if you're incorporating multiple providers. See to the right. 
