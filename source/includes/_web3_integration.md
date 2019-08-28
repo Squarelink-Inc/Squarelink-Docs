@@ -48,20 +48,8 @@ Initialize the Squarelink Object and set it as your Web3 Provider for your appli
 Parameter | Type | Description
 --------- | ------- | -----------
 `clientId` | **String** | This is the `clientId` associated with your ÐApp.
-`network` | **String&#124;Object** | The name of a network supported by Squarelink, or your own custom network configuration (See below). Defaults to `mainnet`.
+`network` | **String&#124;Object** | The name of a network supported by Squarelink (see [Available Networks](#available-networks)), or your own custom network configuration (See below). Defaults to `mainnet`.
 `opts` | **Object** | Additional options to pass to the Squarelink constructor (see below)
-
-
-
-### Supported Networks:
-
-- **Ethereum Mainnet** - `mainnet`
-- **xDai Network** - `xdai`
-- **Ropsten Network** - `ropsten`
-- **Kovan Network** - `kovan`
-- **Rinkeby Network** - `rinkeby`
-- **Goerli Network** - `goerli`
-- **Private/Custom Networks** - see below
 
 > Custom network example
 
@@ -128,4 +116,4 @@ web3.currentProvider.isSquarelink
 
 ### Detecting Squarelink
 
-We attach the `isSquarelink` attribute to our provider for you to identify us if you're incorporating multiple providers. See to the right. 
+We attach the `isSquarelink` attribute to our provider for you to identify us if you're incorporating multiple providers. See to the right.
