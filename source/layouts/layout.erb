@@ -138,17 +138,15 @@ under the License.
       }
       $.get('https://api.squarelink.com/networks-detailed',
         function (data) {
-          var networks = []
+          var networks = ''
           for (var k in data) {
             if (data[k].hidden) continue
             let name = `<td><strong>${k}</strong></td>`
-            let label = `<td>The ${data[k].label} ${!!data[k].testnet ? 'Testnet' : 'Network'}<td>`
-            networks.push(`<tr>${name}${label}</tr>`)
+            let label = `<td>The ${data[k].label} ${!!data[k].testnet ? 'Testnet' : 'Network'}</td>`
+            networks = networks + `<tr>${name}${label}</tr>`
           }
-          networks.push(`<tr><td><strong>custom</strong></td><td>Any network with a Web3 standard public RPC endpoint.</td></tr>`)
-          networks.forEach(el => {
-            $('#network-list').append(el)
-          })
+          networks = networks + `<tr><td><strong>custom</strong></td><td>Any network with a Web3 standard public RPC endpoint.</td></tr>`
+          $('#network-list').append(networks)
         }
       )
     </script>
