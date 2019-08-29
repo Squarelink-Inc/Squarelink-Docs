@@ -142,7 +142,11 @@ under the License.
           for (var k in data) {
             if (data[k].hidden) continue
             let name = `<td><strong>${k}</strong></td>`
-            let label = `<td>The ${data[k].label} ${!!data[k].testnet ? 'Testnet' : 'Network'}</td>`
+            let label
+            if (data[k].label.endsWith('Network'))
+              label = `<td>The ${data[k].label}</td>`
+            else
+              label = `<td>The ${data[k].label} ${!!data[k].testnet ? 'Network' : 'Testnet'}</td>`
             networks = networks + `<tr>${name}${label}</tr>`
           }
           networks = networks + `<tr><td><strong>custom</strong></td><td>Any network with a Web3 standard public RPC endpoint.</td></tr>`
