@@ -89,8 +89,10 @@ sqlk.getEmail()
 Parameter | Type | Description
 --------- | ------- | -----------
 `scope` | `Array` | Request additional scopes to use custom Squarelink functions.
+`useSync` | `Boolean` | Set this to `true` to use getProviderSync (see below).
 
-#### Available Scopes:
+**Available Scopes:**
+
 - `user` - Equivalent to all scopes below
 - `user:name` - Access to read user's name
 - `user:email` - Access to user's email address
@@ -117,3 +119,18 @@ web3.currentProvider.isSquarelink
 ### Detecting Squarelink
 
 We attach the `isSquarelink` attribute to our provider for you to identify us if you're incorporating multiple providers. See to the right.
+
+> Using getProviderSync()
+
+```javascript
+...
+const sqlk = new Squarelink('<CLIENT ID>', 'mainnet', { useSync: true })
+const web3 = new Web(sqlk.getProviderSync())
+...
+```
+
+### Intializing Squarelink Syncrhonously
+
+The `getProvider` function fetches a list of our supported networks and their RPC endpoints from our API. This allows us to remotely switch RPC providers to ensure 100% uptime and remove faulty/compromised endpoints.
+
+If you are unable to support callbacks/promises, you can use `getProviderSync` which uses hard-coded RPC endpoints. **NOTE**: *we cannot guarantee 100% uptime with this method.*
