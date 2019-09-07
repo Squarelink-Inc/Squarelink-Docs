@@ -260,7 +260,6 @@ Edit information for a specific wallet owned by a user.
 Parameter | Type | Description
 --------- | ----------- | -----------
 **`access_token`** | **String** | *(Required)* The access token you received for a Squarelink user.
-**`wallet_id`** | **String** | *(Required)* The ID for the wallet you want to view.
 **`name`** | **String** | Name you want to set for the wallet.
 
 ### Response Body
