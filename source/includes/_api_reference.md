@@ -80,7 +80,8 @@ $ curl -X GET -H "Content-type: application/json" https://api.squarelink.com/wal
       "owner": "u12345dabcdef"
       "name": "ETH Account 2",
       "address": "0xf40bED2fFEE76B5517Fc992CC798Ece4c55D8F99",
-      "created_on": 1539048241
+      "created_on": 1539048241,
+      "creator": "Your-dapp-id"
     },
   ],
 }
@@ -416,6 +417,7 @@ Parameter | Type | Description
 **`name`** | **String** | The user's name for that wallet.
 **`address`** | **String** | The public address of the wallet.
 **`created_on`** | **Integer** | Date created on Squarelink (number of seconds since the Epoch).
+**`creator`** | **String** | Your DApp ID (only returned if your dapp created the wallet)
 
 
 
