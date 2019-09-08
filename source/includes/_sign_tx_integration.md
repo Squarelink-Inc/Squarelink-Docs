@@ -15,7 +15,7 @@ If you have not done so already, please [register your ÐApp](#getting-started) 
 <a href="https://app.squarelink.com/tx?
 	client_id=<YOUR CLIENT_ID>
 	&to=<RECIPIENT ETHEREUM ADDRESS>
-	&amount=<AMOUNT TO BE TRANSFERRED IN WEI>">
+	&value=<AMOUNT TO BE TRANSFERRED IN WEI>">
     <img src="https://squarelink.com/img/sign-tx.svg" width="220"></img>
 </a>
 ```
