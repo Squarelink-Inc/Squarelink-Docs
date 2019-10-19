@@ -32,10 +32,10 @@ const sqlk = new Squarelink('Your-Dapp-ID')
 
 // Use Promise or callback
 sqlk.getProvider((provider, err) => {
-  window.web3 = new Web3(provider)
+  var web3 = new Web3(provider)
 
   // Use standard Web3 methods as you normally would
-  window.web3.eth.getAccounts().then(console.log)
+  web3.eth.currentProvider.enable().then(console.log)
 })
 ```
 
@@ -129,7 +129,7 @@ const web3 = new Web(sqlk.getProviderSync())
 ...
 ```
 
-### Intializing Squarelink Syncrhonously
+### Intializing Squarelink Synchronously
 
 The `getProvider` function fetches a list of our supported networks and their RPC endpoints from our API. This allows us to remotely switch RPC providers to ensure 100% uptime and remove faulty/compromised endpoints.
 
