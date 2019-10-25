@@ -70,12 +70,14 @@ Parameter | Description
 > Authorization Code Grant Request Example
 
 ```shell
-$ curl -X GET -H "Content-type: application/json" https://oauth.squarelink.com/token?
-		grant_type=authorization_code
-		&client_id=<CLIENT_ID>
-		&client_secret=<CLIENT_SECRET>
-		&code=<AUTHORIZATION_CODE>
-		&state=<STATE>
+$ curl -X POST -H "Content-type: application/json" https://oauth.squarelink.com/token
+		-d '{
+			"grant_type": "authorization_code",
+			"client_id": "<CLIENT_ID>",
+			"client_secret": "<CLIENT_SECRET>",
+			"code": "<AUTHORIZATION_CODE>",
+			"state": "<STATE>"
+		}'
 ```
 
 > Example Response
